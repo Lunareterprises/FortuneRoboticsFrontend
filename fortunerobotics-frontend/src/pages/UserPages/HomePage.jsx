@@ -5,14 +5,14 @@ import Footer from '../../components/UserComponents/FooterComponent/Footer';
 import WhoWeAre from '../../components/UserComponents/WhoWeAre/WhoWeAre';
 const HomePage = () => {
     return (
-        <div className="page-wrapper">
+        <>
             {/* Header Component */}
-            <Header />
+            < Header />
             {/* Who We Are Section */}
-            <WhoWeAre />
+            < WhoWeAre />
             {/* Footer Component */}
-            <Footer />
-        </div>
+            < Footer />
+        </>
     );
 };
 
