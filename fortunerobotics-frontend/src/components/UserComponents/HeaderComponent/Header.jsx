@@ -14,7 +14,7 @@ const Header = () => {
             <div className="header-container">
                 {/* Logo Section */}
                 <div className="header-logo">
-                    <h1>Fortune Robotics</h1>
+                    <img src='' />
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -34,17 +34,13 @@ const Header = () => {
                 <nav className={`header-nav ${isMenuOpen ? 'nav-open' : ''}`}>
                     <ul className="nav-list">
                         <li><a href="#home" className="nav-link">Home</a></li>
-                        <li><a href="#about" className="nav-link">About</a></li>
-                        <li><a href="#products" className="nav-link">Products</a></li>
-                        <li><a href="#services" className="nav-link">Services</a></li>
-                        <li><a href="#contact" className="nav-link">Contact</a></li>
+                        <li><a href="#about" className="nav-link">Product & Services</a></li>
+                        <li><a href="#products" className="nav-link">Case Studies</a></li>
+                        <li><a href="#services" className="nav-link">Research</a></li>
+                        <li><a href="#contact" className="nav-link">Blog</a></li>
+                        <li><a href="#contact" className="nav-link">Contact Us</a></li>
                     </ul>
                 </nav>
-
-                {/* CTA Button */}
-                <div className="header-cta">
-                    <button className="button-primary">Get Quote</button>
-                </div>
             </div>
         </header>
     );

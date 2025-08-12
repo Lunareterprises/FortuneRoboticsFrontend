@@ -2,7 +2,7 @@
 
 /* Base Header Styles - Mobile First */
 .header {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background: transparent;
   color: white;
   position: sticky;
   top: 0;
@@ -138,10 +138,6 @@
 
 /* ===== SMALL PHONES (480px+) ===== */
 @media (min-width: 480px) {
-  .header-container {
-    padding: 1rem 1.5rem;
-  }
-
   .header-logo h1 {
     font-size: 1.6rem;
   }
@@ -149,10 +145,6 @@
 
 /* ===== TABLETS (576px+) ===== */
 @media (min-width: 576px) {
-  .header-container {
-    padding: 1rem 2rem;
-  }
-
   .nav-link {
     padding: 1rem 2.5rem;
   }
@@ -205,10 +197,6 @@
 
 /* ===== DESKTOP (992px+) ===== */
 @media (min-width: 992px) {
-  .header-container {
-    padding: 1.5rem 2rem;
-  }
-
   .nav-list {
     gap: 1rem;
   }
@@ -225,10 +213,6 @@
 
 /* ===== LARGE DESKTOP (1200px+) ===== */
 @media (min-width: 1200px) {
-  .header-container {
-    padding: 2rem;
-  }
-
   .nav-list {
     gap: 1.5rem;
   }
@@ -245,10 +229,6 @@
 
 /* ===== EXTRA LARGE (1400px+) ===== */
 @media (min-width: 1400px) {
-  .header-container {
-    padding: 2.5rem;
-  }
-
   .nav-list {
     gap: 2rem;
   }
