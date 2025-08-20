@@ -5,9 +5,7 @@ import robo from "../assets/robo.jpeg";
 import ProductCard from "../components/ProductCard";
 import SubscriptionForm from "../components/SubscriptionForm";
 import image from "../assets/alone.png"; // Assuming you have a robot image
-import '../carrousal.css'
-
-
+import "../carrousal.css";
 
 const mockProducts = [
   {
@@ -83,8 +81,6 @@ const mockRentals = [
 ];
 
 const Home = () => {
-
-  
   const [products, setProducts] = useState([]);
   const [rentals, setRentals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -111,7 +107,41 @@ const Home = () => {
     fetchProducts();
   }, []);
 
+  const cards = [
+    {
+      id: 1,
+      title: "Card 1",
+      text: "This is a description for card 1.",
+      img: "https://via.placeholder.com/250x150",
+    },
+    {
+      id: 2,
+      title: "Card 2",
+      text: "This is a description for card 2.",
+      img: "https://via.placeholder.com/250x150",
+    },
+    {
+      id: 3,
+      title: "Card 3",
+      text: "This is a description for card 3.",
+      img: "https://via.placeholder.com/250x150",
+    },
+    {
+      id: 4,
+      title: "Card 4",
+      text: "This is a description for card 4.",
+      img: "https://via.placeholder.com/250x150",
+    },
+    {
+      id: 5,
+      title: "Card 5",
+      text: "This is a description for card 5.",
+      img: "https://via.placeholder.com/250x150",
+    },
+  ];
 
+  // Duplicate cards for infinite effect
+  const sliderCards = [...cards, ...cards];
 
   return (
     <>
@@ -169,7 +199,11 @@ const Home = () => {
         <div className="position-absolute top-50 start-50 translate-middle hero-container">
           <h1
             className="animated-text"
-            style={{ fontFamily: "'Red Rose', cursive" }}
+            style={{
+              fontFamily: "Red Rose",
+              fontSize: "48px",
+              fontWeight: "bold",
+            }}
           >
             SHAPING THE FUTURE WITH INTELLIGENT MACHINES
           </h1>
@@ -220,7 +254,7 @@ const Home = () => {
           <h2 className="fw-bold">WHO WE ARE</h2>
           <p
             className="text-muted"
-            style={{ fontFamily: "'Red Rose', cursive", fontSize: "17px" }}
+            style={{ fontFamily: "Red Rose", fontSize: "17px" }}
           >
             Empowering businesses in the UAE and beyond with intelligent <br />{" "}
             service & industrial robots designed for the future.
@@ -268,6 +302,7 @@ const Home = () => {
                   : "btn-white text-primary btn-sm"
               }`}
               onClick={() => setActiveButton("products")}
+              // onClick={() => handleProducts("products")}
             >
               Our Products
             </button>
@@ -280,13 +315,14 @@ const Home = () => {
                   : "btn-white text-primary btn-sm"
               }`}
               onClick={() => setActiveButton("quote")}
+              // onClick={() => handleProducts("quote")}
             >
               Request a Quote
             </button>
           </div>
         </div>
       </Container>
-      <Container className="my-5">
+      <Container className="my-5 mb-3">
         {isLoading ? (
           <div className="text-center">Loading products...</div>
         ) : error ? (
@@ -297,12 +333,19 @@ const Home = () => {
               <ProductCard
                 key={index}
                 product={product}
-                buttonText={`${product.price} | Buy Now`}
+                // buttonText={`${product.price} | Buy Now`}
+                buttonText={{
+                  name:
+                    activeButton === "products"
+                      ? product.price
+                      : "Request Quotes",
+                  value: activeButton === "products" ? 1 : 0,
+                }}
               />
             ))}
           </Row>
         )}
-        <div className="text-center mt-4">
+        <div className="text-center mt-5">
           <Button variant="outline-primary rounded-0" className="btn">
             View All
           </Button>
@@ -311,15 +354,22 @@ const Home = () => {
 
       {/* Flexible Robot Rentals Section */}
       <Container className="my-5">
-        <div className="text-center mb-4">
-          <h2 className="fw-bold" style={{ fontFamily: "'Red Rose', cursive" }}>
+        <div className="text-center mb-2">
+          <h2
+            className="fw-bold"
+            style={{
+              fontFamily: "Red Rose",
+              fontWeight: "bold",
+              fontSize: "30px",
+            }}
+          >
             FLEXIBLE ROBOT RENTALS FOR EVENTS, <br /> BUSINESSES & MORE
           </h2>
           <p
             className="text-muted"
             style={{
               fontSize: "17px",
-              fontFamily: "'Red Rose', cursive",
+              fontFamily: "Red Rose",
             }}
           >
             From smart assistants to delivery bots, Fortune Robotics <br />{" "}
@@ -333,7 +383,11 @@ const Home = () => {
         ) : (
           <Row className="d-flex justify-content-center">
             {rentals.map((rental, index) => (
-              <ProductCard key={index} product={rental} buttonText="Rent Now" />
+              <ProductCard
+                key={index}
+                product={rental}
+                buttonText={{ name: "Rent Now" }}
+              />
             ))}
           </Row>
         )}
@@ -342,15 +396,16 @@ const Home = () => {
         </div>
       </Container>
       {/* client section  */}
-      <Container className="my-5">
-        <div className="text-center mb-4">
-          <h2 className="fw-bold" style={{ fontFamily: "'Red Rose', cursive" }}>
+
+      <Container fluid className="" style={{ marginBottom: "130px" }}>
+        <div className="text-center">
+          <h2 className="fw-bold" style={{ fontFamily: "Red Rose" }}>
             WHAT OUT CLIENT SAYS
           </h2>
           <p
             style={{
               fontSize: "17px",
-              fontFamily: "'Red Rose', cursive",
+              fontFamily: "Red Rose",
             }}
           >
             Real stories from business that transformed their
@@ -359,133 +414,60 @@ const Home = () => {
           </p>
         </div>
         {/* carrousal  */}
-        <div
-          id="multiCardCarousel"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="200">
-              <div class="row g-2">
-                <div class="col-md-3">
-                  <div class="card">
-                    <img
-                      src="https://picsum.photos/200/150?random=1"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card 1</h5>
-                      <p class="card-text">Some text here.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="card">
-                    <img
-                      src="https://picsum.photos/200/150?random=2"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card 2</h5>
-                      <p class="card-text">Some text here.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="card">
-                    <img
-                      src="https://picsum.photos/200/150?random=3"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card 3</h5>
-                      <p class="card-text">Some text here.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="card">
-                    <img
-                      src="https://picsum.photos/200/150?random=4"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card 4</h5>
-                      <p class="card-text">Some text here.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div class="carousel-item">
-              <div class="row g-2">
-                <div class="col-md-3">
-                  <div class="card">
-                    <img
-                      src="https://picsum.photos/200/150?random=5"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card 5</h5>
-                      <p class="card-text">Some text here.</p>
+        <div className="slider">
+          <div className="slider-track left">
+            {sliderCards.map((card, index) => (
+              <div className="slide" key={index}>
+                <div className="card border shadow-sm">
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      <img
+                        src={robo}
+                        className="card-img-top"
+                        alt={card.title}
+                      />
                     </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="card">
-                    <img
-                      src="https://picsum.photos/200/150?random=6"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card 6</h5>
-                      <p class="card-text">Some text here.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="card">
-                    <img
-                      src="https://picsum.photos/200/150?random=7"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card 7</h5>
-                      <p class="card-text">Some text here.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="card">
-                    <img
-                      src="https://picsum.photos/200/150?random=8"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card 8</h5>
-                      <p class="card-text">Some text here.</p>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h5 className="card-title">{card.title}</h5>
+                        <p className="card-text">{card.text}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="slider">
+          <div className="slider-track right">
+            {sliderCards.map((card, index) => (
+              <div className="slide" key={index}>
+                <div className="card border shadow-sm">
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      <img
+                        src={robo}
+                        className="card-img-top"
+                        alt={card.title}
+                      />
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h5 className="card-title">{card.title}</h5>
+                        <p className="card-text">{card.text}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* carrousal end */}
-
-        <div className="text-center mt-4">
-          <Button variant="outline-primary rounded-0">View All</Button>
-        </div>
       </Container>
 
       <SubscriptionForm image={image} />

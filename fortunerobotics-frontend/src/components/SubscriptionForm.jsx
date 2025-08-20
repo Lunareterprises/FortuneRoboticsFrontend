@@ -1,88 +1,85 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button, Toast } from 'react-bootstrap';
+// import { bottom } from "@popperjs/core";
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Button, Toast } from "react-bootstrap";
 
 const SubscriptionForm = ({ image }) => {
-    const [email, setEmail] = useState('');
-    const [showToast, setShowToast] = useState(false);
+  const [email, setEmail] = useState("");
+  const [showToast, setShowToast] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Subscribing with email:', email);
-        setShowToast(true); // show toast
-        setEmail(''); // reset input
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Subscribing with email:", email);
+    setShowToast(true); // show toast
+    setEmail(""); // reset input
+  };
 
-    return (
-        <div
-            className="text-white d-flex align-items-center position-relative"
-            style={{
-                background: 'linear-gradient(to bottom, #ffffffff, #8d9aafff 50%, #152049ff 50%, #100062ff)',
-                minHeight: '50vh',
-            }}
-        >
-            <Container>
-                <Row className="align-items-center">
-                    <Col md={7}>
-                        <h2 className="fw-bold">JOIN 5,000+ ROBOTICS PROFESSIONALS.</h2>
-                        <h3 className="fw-light">GET TRENDS, NEWS & OFFERS.</h3>
-                        <Form onSubmit={handleSubmit} className="mt-4">
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Control
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    className="rounded-0"
-                                    required
-                                />
-                            </Form.Group>
-                            <Button
-                                variant="primary"
-                                type="submit"
-                                className="w-100 rounded-0"
-                            >
-                                SUBSCRIBE
-                            </Button>
-                        </Form>
-                    </Col>
-                    <Col
-                        md={5}
-                        className="d-none d-md-flex justify-content-center align-items-center"
-                    >
-                        <img
-                            src={image}
-                            alt="Futuristic robot"
-                            className="img-fluid"
-                            style={{ height: '70%', objectFit: 'contain' }}
-                        />
-                    </Col>
-                </Row>
-            </Container>
+  return (
+      <div
+        className="text-white d-flex align-items-center mt-3 position-relative"
+        style={{
+          height: "40vh",
+          width: "100%",
+          background: "linear-gradient(to bottom, #1e2a3b, #152049)",
+          overflow: "visible", // allow overflow outside this div
+        }}
+      >
+        <Container fluid style={{ overflow: "visible" }}>
+          <Row className="align-items-center" style={{ overflow: "visible" }}>
+            {/* Text & Form */}
+            <Col md={7} className="mb-4 mb-md-0">
+              <h2 className="fw-bold mb-3" style={{ fontSize: "2rem" }}>
+                JOIN 5,000+ ROBOTICS PROFESSIONALS.
+              </h2>
+              <h3 className="fw-light mb-4" style={{ fontSize: "1.5rem" }}>
+                GET TRENDS, NEWS & OFFERS.
+              </h3>
 
-            {/* Toast Notification */}
-            <Toast
-                onClose={() => setShowToast(false)}
-                show={showToast}
-                delay={3000}
-                autohide
-                style={{
-                    position: 'fixed',
-                    top: 20,
-                    right: 20,
-                    minWidth: '250px',
-                    backgroundColor: '#0d6efd',
-                    color: 'white',
-                }}
+              <Form
+                onSubmit={handleSubmit}
+                className="d-flex flex-column flex-sm-row gap-2"
+              >
+                <Form.Control
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="rounded-0"
+                  style={{ flex: 1 }}
+                  required
+                />
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="rounded-0 px-4 mt-2 mt-sm-0"
+                >
+                  SUBSCRIBE
+                </Button>
+              </Form>
+            </Col>
+
+            {/* Right Side Image */}
+            <Col
+              md={5}
+              className="d-none d-md-block position-relative"
+              style={{ minHeight: "300px", overflow: "visible" }}
             >
-                <Toast.Header closeButton={true}>
-                    <strong className="me-auto">Subscription</strong>
-                </Toast.Header>
-                <Toast.Body>
-                    Thank you for subscribing, {email || 'user'}!
-                </Toast.Body>
-            </Toast>
-        </div>
-    );
+              <img
+                src={image}
+                alt="Futuristic robot"
+                className="position-absolute"
+                style={{
+                  height: "140%", // bigger than container
+                  objectFit: "cover",
+                  right: "100px", // overflow to right
+                  top: "-40%", // overflow top
+                  zIndex: 0, // behind text
+                }}
+              />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+  );
 };
 
 export default SubscriptionForm;
