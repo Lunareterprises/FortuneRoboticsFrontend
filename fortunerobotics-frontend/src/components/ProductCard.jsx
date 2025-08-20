@@ -1,7 +1,9 @@
 import React from "react";
 import { Col, Card, Button, Badge } from "react-bootstrap";
+import { useNavigate } from "react-router";
 
 const ProductCard = ({ product, buttonText }) => {
+  const navigate = useNavigate();
   return (
     <Col xs={12} sm={6} md={3} className="mb-2 d-flex justify-content-center">
       <Card
@@ -51,8 +53,24 @@ const ProductCard = ({ product, buttonText }) => {
           </ul>
 
           <div className="d-grid gap-2 mt-auto">
-            <Button variant="primary" style={{ borderRadius: "0px" }}>
-              {buttonText}
+            <Button
+              variant="primary"
+              style={{
+                fontFamily: "Red Rose",
+                fontWeight: "bold",
+                borderRadius: "0px",
+              }}
+              // onClick={buttonText === ""}
+              onClick={() =>
+                buttonText
+                  ? buttonText.value === 1
+                    ? navigate("/research")
+                    : navigate("/blog")
+                  : null
+              }
+            >
+              {/* {buttonText} */}
+              {buttonText.name}
             </Button>
           </div>
         </Card.Body>
