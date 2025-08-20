@@ -28,7 +28,7 @@ const SubscriptionForm = ({ image }) => {
             {/* Text & Form */}
             <Col md={7} className="mb-4 mb-md-0">
               <h2 className="fw-bold mb-3" style={{ fontSize: "2rem" }}>
-                JOIN 5,000+ ROBOTICS PROFESSIONALS.
+                JOINS 5000+ ROBOTICS PROFESSIONALS.
               </h2>
               <h3 className="fw-light mb-4" style={{ fontSize: "1.5rem" }}>
                 GET TRENDS, NEWS & OFFERS.
