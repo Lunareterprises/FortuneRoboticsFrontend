@@ -33,7 +33,7 @@ const Casestudies = () => {
   }, []);
   return (
     <div>
-      <div className="text-center mt-5">
+      <div className="text-center pt-5">
         <h2 className="fw-bold">
           Innovative Solutions: A Collection of Case Studies.
         </h2>
@@ -50,24 +50,52 @@ const Casestudies = () => {
         ) : error ? (
           <div className="text-center text-danger">{error}</div>
         ) : (
-          <Row className="d-flex justify-content-center gx-0 gy-3 p-5">
+          <div className="products-grid">
             {products?.map((product, index) => (
-              <Col sm={3} key={index}>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img variant="top" src="holder.js/100px180" />
-                  <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
+              <Card key={index} className="product-card">
+                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
             ))}
-          </Row>
+          </div>
         )}
       </Container>
+
+      <style jsx>{`
+        .products-grid {
+          display: grid;
+          padding: 80px;
+          grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+          column-gap: -20px; /* horizontal gap */
+          row-gap: 10px; /* vertical gap */
+          justify-items: center; /* center cards horizontally */
+        }
+
+        .product-card {
+          width: 22rem;
+        }
+
+        /* Responsive: 2 cards per row on tablets */
+        @media (max-width: 992px) {
+          .products-grid {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 10px;
+          }
+        }
+
+        /* Responsive: 1 card per row on small phones */
+        @media (max-width: 576px) {
+          .products-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
     </div>
   );
 };

@@ -224,11 +224,11 @@ const Productservices = () => {
                 growth.
               </h4>
               <p
-                className="fw-light mb-4"
+                className="fw-light mb-4 mx-5"
                 style={{
                   fontSize: "0.99rem",
                   fontFamily: "Red Rose",
-                  textAlign: "center",
+                  textAlign: "left",
                 }}
               >
                 Discover the industries we’ve transformed and the results we’ve
