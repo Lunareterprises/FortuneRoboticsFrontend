@@ -66,12 +66,11 @@ const SubscriptionForm = ({ image }) => {
                   Enter your Email
                 </Form.Label>
                 <Form.Control
-                  type="email"
-                  placeholder="Enter your email"
+                  disabled
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="text-center bg-transparent border border-white rounded-1 small text-white"
+                  className="text-center bg-transparent border border-white rounded-1 small text-white no-focus"
                 />
               </div>
 

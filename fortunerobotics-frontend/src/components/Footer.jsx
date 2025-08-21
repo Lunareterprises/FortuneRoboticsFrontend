@@ -140,7 +140,7 @@ const Footer = () => {
       {/* Copyright */}
       <hr />
       <div className="border-t border-gray-600 mt-8 py-6 text-center text-sm text-gray-700 mt-5">
-        <p> © 2025 Lunar Enterprises. All Rights Reserved.</p>
+        <p> © {new Date().getFullYear()} Lunar Enterprises. All Rights Reserved.</p>
       </div>
     </footer>
   );

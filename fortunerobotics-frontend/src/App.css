@@ -6,6 +6,16 @@
   height: 40vmin;
   pointer-events: none;
 }
+/* // new pointer */
+body {
+  user-select: none; /* prevent text highlight */
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* ponter end  */
 
 
 @media (prefers-reduced-motion: no-preference) {
