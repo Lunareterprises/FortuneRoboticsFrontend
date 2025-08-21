@@ -264,22 +264,22 @@ const Home = () => {
         <div className="row align-items-center">
           {/* Left Column - Text */}
           <div className="col-lg-6">
-            <p>
-              At Fortune Robotics, we’re redefining automation across
-              hospitality, healthcare, logistics, and corporate industries.
-              Headquartered in Dubai, our solutions combine global innovation
-              with local support — offering both purchase and rental options
-              tailored to business needs.
-            </p>
-            <p>
-              To revolutionize service and industrial sectors by making advanced
-              robotics accessible, adaptable, and efficient — empowering
-              businesses to thrive in the age of automation.
-            </p>
-            <p>
-              To become the Middle East’s most trusted robotics partner by
-              leading in innovation, research, and customer-focused solutions.
-            </p>
+            <div style={{ fontFamily: "Red Rose", fontSize: "17px" }}>
+              <p>
+                At Fortune Robotics, we’re redefining automation across
+                hospitality, healthcare, logistics, and corporate industries.
+                Headquartered in Dubai, our solutions combine global innovation
+                with local support — offering both purchase and rental options
+                tailored to business needs. To revolutionize service and
+                industrial sectors by making advanced robotics accessible,
+                adaptable, and efficient — empowering businesses to thrive in
+                the age of automation.
+              </p>
+              <p>
+                To become the Middle East’s most trusted robotics partner by
+                leading in innovation, research, and customer-focused solutions.
+              </p>
+            </div>
           </div>
 
           {/* Right Column - Single Image */}
@@ -429,8 +429,15 @@ const Home = () => {
                       />
                     </div>
                     <div className="col-md-8">
-                      <div className="card-body">
-                        <h5 className="card-title">{card.title}</h5>
+                      <div className="card-body position-relative">
+                        {/* Title + Stars */}
+                        <div className="d-flex justify-content-between align-items-start">
+                          <h5 className="card-title mb-1">{card.title}</h5>
+                          {/* ⭐ Star Rating */}
+                          <div className="text-warning small">★★★★☆</div>
+                        </div>
+
+                        {/* Paragraph under title */}
                         <p className="card-text">{card.text}</p>
                       </div>
                     </div>
@@ -455,8 +462,15 @@ const Home = () => {
                       />
                     </div>
                     <div className="col-md-8">
-                      <div className="card-body">
-                        <h5 className="card-title">{card.title}</h5>
+                      <div className="card-body position-relative">
+                        {/* Title + Stars */}
+                        <div className="d-flex justify-content-between align-items-start">
+                          <h5 className="card-title mb-1">{card.title}</h5>
+                          {/* ⭐ Star Rating */}
+                          <div className="text-warning small">★★★★☆</div>
+                        </div>
+
+                        {/* Paragraph under title */}
                         <p className="card-text">{card.text}</p>
                       </div>
                     </div>

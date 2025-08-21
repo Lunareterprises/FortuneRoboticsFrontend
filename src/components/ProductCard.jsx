@@ -4,13 +4,19 @@ import { useNavigate } from "react-router";
 
 const ProductCard = ({ product, buttonText }) => {
   const navigate = useNavigate();
+
   return (
-    <Col xs={12} sm={6} md={3} className="mb-2 d-flex justify-content-center">
+    <Col
+      xs={12}
+      sm={6}
+      md={4}
+      className="mb-2 d-flex justify-content-center"
+    >
       <Card
-        className="h-100"
+        className="h-100 custom-card"
         style={{
           borderRadius: "0px",
-          maxWidth: "280px",
+          maxWidth: "300px",
           boxShadow: "0 4px 5px rgba(0, 0, 0, 0.15)",
         }}
       >
@@ -60,7 +66,6 @@ const ProductCard = ({ product, buttonText }) => {
                 fontWeight: "bold",
                 borderRadius: "0px",
               }}
-              // onClick={buttonText === ""}
               onClick={() =>
                 buttonText
                   ? buttonText.value === 1
@@ -69,7 +74,6 @@ const ProductCard = ({ product, buttonText }) => {
                   : null
               }
             >
-              {/* {buttonText} */}
               {buttonText.name}
             </Button>
           </div>
