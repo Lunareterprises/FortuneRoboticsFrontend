@@ -14,71 +14,152 @@ const SubscriptionForm = ({ image }) => {
   };
 
   return (
-      <div
-        className="text-white d-flex align-items-center mt-3 position-relative"
-        style={{
-          height: "40vh",
-          width: "100%",
-          background: "linear-gradient(to bottom, #1e2a3b, #152049)",
-          overflow: "visible", // allow overflow outside this div
-        }}
-      >
-        <Container fluid style={{ overflow: "visible" }}>
-          <Row className="align-items-center" style={{ overflow: "visible" }}>
-            {/* Text & Form */}
-            <Col md={7} className="mb-4 mb-md-0">
-              <h2 className="fw-bold mb-3" style={{ fontSize: "2rem" }}>
-                JOINS 5000+ ROBOTICS PROFESSIONALS.
-              </h2>
-              <h3 className="fw-light mb-4" style={{ fontSize: "1.5rem" }}>
-                GET TRENDS, NEWS & OFFERS.
-              </h3>
+    <div
+      className="text-white d-flex align-items-center mt-3 position-relative"
+      style={{
+        height: "40vh",
+        width: "100%",
+        background: "linear-gradient(to bottom, #1e2a3b, #152049)",
+        overflow: "visible", // allow overflow outside this div
+      }}
+    >
+      <Container fluid style={{ overflow: "visible" }}>
+        <Row className="align-items-center" style={{ overflow: "visible" }}>
+          {/* Text & Form */}
+          <Col md={7} className="mb-4 mb-md-0">
+            <h2
+              className="fw-bold mb-1"
+              style={{
+                fontSize: "2rem",
+                fontFamily: "Red Rose",
+                textAlign: "center",
+              }}
+            >
+              JOIN 5,000+ ROBOTICS PROFESSIONALS.
+            </h2>
+            <h3
+              className="fw-light mb-4"
+              style={{
+                fontSize: "2rem",
+                fontFamily: "Red Rose",
+                textAlign: "center",
+              }}
+            >
+              GET TRENDS, NEWS & OFFERS.
+            </h3>
 
-              <Form
-                onSubmit={handleSubmit}
-                className="d-flex flex-column flex-sm-row gap-2"
-              >
+            <Form
+              onSubmit={handleSubmit}
+              className="d-flex flex-column align-items-center"
+            >
+              <div className="position-relative w-50 mb-3">
+                <Form.Label
+                  className="position-absolute top-0 start-0 translate-middle-y px-1 small text-white"
+                  style={{
+                    fontSize: "12px",
+                    backgroundColor: "rgba(0,0,0,0.7)",
+                    borderRadius: "0px",
+                    padding: "0 6px",
+                    marginLeft: "6px",
+                  }}
+                >
+                  Enter your Email
+                </Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="rounded-0"
-                  style={{ flex: 1 }}
                   required
+                  className="text-center bg-transparent border border-white rounded-1 small text-white"
                 />
-                <Button
-                  variant="primary"
-                  type="submit"
-                  className="rounded-0 px-4 mt-2 mt-sm-0"
-                >
-                  SUBSCRIBE
-                </Button>
-              </Form>
-            </Col>
+              </div>
 
-            {/* Right Side Image */}
-            <Col
-              md={5}
-              className="d-none d-md-block position-relative"
-              style={{ minHeight: "300px", overflow: "visible" }}
-            >
-              <img
-                src={image}
-                alt="Futuristic robot"
-                className="position-absolute"
-                style={{
-                  height: "140%", // bigger than container
-                  objectFit: "cover",
-                  right: "100px", // overflow to right
-                  top: "-40%", // overflow top
-                  zIndex: 0, // behind text
-                }}
-              />
-            </Col>
-          </Row>
-        </Container>
-      </div>
+              <Button
+                variant="primary"
+                type="submit"
+                className="w-50 rounded-1 small"
+                style={{ fontFamily: "Red Rose" }}
+              >
+                SUBSCRIBE
+              </Button>
+            </Form>
+          </Col>
+
+          {/* Right Side Image */}
+          <Col md={5} className="d-none d-md-block position-relative hero-col">
+            <img src={image} alt="Futuristic robot" className="hero-image" />
+          </Col>
+        </Row>
+
+        {/* Media Queries */}
+        <style jsx>{`
+          /* Default Desktop */
+          .hero-col {
+            min-height: 302px;
+          }
+          .hero-image {
+            position: absolute;
+            object-fit: cover;
+            bottom: 0;
+            height: 140%;
+            right: 100px;
+            z-index: 0;
+          }
+
+          /* iPad Pro Landscape (1200px - 1366px) */
+          @media (max-width: 1366px) and (min-width: 1200px) {
+            .hero-col {
+              min-height: 400px;
+              flex: 0 0 45%; /* shrink col width */
+              max-width: 45%;
+            }
+            .hero-image {
+              height: 160%;
+              right: 80px;
+            }
+          }
+
+          /* iPad Pro Portrait & Tablets (≤1199px) */
+          @media (max-width: 1199px) {
+            .hero-col {
+              min-height: 496px;
+              flex: 0 0 40%; /* smaller col */
+              max-width: 40%;
+            }
+            .hero-image {
+              height: 120%;
+              right: 10px;
+            }
+          }
+
+          @media (max-width: 912px) {
+            .hero-col {
+              min-height: 547px;
+              flex: 0 0 40%; /* smaller col */
+              max-width: 40%;
+            }
+            .hero-image {
+              height: 120%;
+              right: -40px;
+            }
+          }
+
+          /* Mobile screens (≤575px) */
+          @media (max-width: 575px) {
+            .hero-col {
+              min-height: 250px;
+              flex: 0 0 100%; /* full width col */
+              max-width: 100%;
+            }
+            .hero-image {
+              height: 90%;
+              right: 20px;
+            }
+          }
+        `}</style>
+      </Container>
+    </div>
   );
 };
 
