@@ -506,3 +506,15 @@ export const innovation = [
     ],
   },
 ];
+
+export const currentproject = [
+  {
+    title: "Artificial Intelligence for Decision Making",
+    sub:"Fortune Robotics integrates deep learning and predictive algorithms, enabling robots to analyze environments, anticipate challenges, and make autonomous decisions without human intervention"
+  },
+    {
+    title: "VisionX",
+    sub:"Next-gen visual recognition for retail & security robotics."
+  },
+  
+];
