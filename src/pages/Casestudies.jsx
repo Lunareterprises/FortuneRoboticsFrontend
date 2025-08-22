@@ -180,6 +180,7 @@ const Casestudies = () => {
           </Container>
         )}
       </Container>
+      
       <Row className="mt-4">
         <Col className="d-flex justify-content-center">
           <CustomPagination

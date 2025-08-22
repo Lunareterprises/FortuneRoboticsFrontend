@@ -466,5 +466,43 @@ export const caseStudies = [
     client: "ShopSmart",
     place: "London, UK",
   },
+];
 
+export const innovation = [
+  {
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=D2+Delivery+Robot",
+    tags: ["Industry Trends"],
+    title: "Advanced Navigation Systems",
+    text: "Our robots are equipped with next-generation navigation systems that combine real-time mapping, GPS precision, and AI route optimization to ensure flawless movement — indoors or outdoors.",
+    highlights: [
+      "SLAM (Simultaneous Localization and Mapping) Technology",
+      "Real-time route recalculation",
+      "Multi-terrain adaptability",
+      "Autonomous obstacle avoidance",
+    ],
+  },
+  {
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=D2+Delivery+Robot",
+    tags: ["Future of Human-Robot Interaction"],
+    title: "Artificial Intelligence for Decision Making",
+    text: "Fortune Robotics integrates deep learning and predictive algorithms, enabling robots to analyze environments, anticipate challenges, and make autonomous decisions without human intervention",
+    highlights: [
+      "Predictive Path Planning",
+      "AI-driven behavior adaptation",
+      "Dynamic environment learning",
+      "Context-aware task execution",
+    ],
+  },
+  {
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=D2+Delivery+Robot",
+    tags: ["Sustainable Robotics Development"],
+    title: "Computer Vision & Sensor Fusion",
+    text: "Our robots are equipped with next-generation navigation systems that combine real-time mapping, GPS precision, and AI route optimization to ensure flawless movement — indoors or outdoors.",
+    highlights: [
+      "SLAM (Simultaneous Localization and Mapping) Technology",
+      "Real-time route recalculation",
+      "Multi-terrain adaptability",
+      "Autonomous obstacle avoidance",
+    ],
+  },
 ];

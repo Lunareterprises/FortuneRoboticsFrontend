@@ -6,12 +6,7 @@ const ProductCard = ({ product, buttonText }) => {
   const navigate = useNavigate();
 
   return (
-    <Col
-      xs={12}
-      sm={6}
-      md={4}
-      className="mb-2 d-flex justify-content-center"
-    >
+    <Col xs={12} sm={6} md={4} className="mb-2 d-flex justify-content-center">
       <Card
         className="h-100 custom-card"
         style={{
@@ -59,23 +54,23 @@ const ProductCard = ({ product, buttonText }) => {
           </ul>
 
           <div className="d-grid gap-2 mt-auto">
-            <Button
-              variant="primary"
-              style={{
-                fontFamily: "Red Rose",
-                fontWeight: "bold",
-                borderRadius: "0px",
-              }}
-              onClick={() =>
-                buttonText
-                  ? buttonText.value === 1
+            {buttonText && buttonText !== "" && (
+              <Button
+                variant="primary"
+                style={{
+                  fontFamily: "Red Rose",
+                  fontWeight: "bold",
+                  borderRadius: "0px",
+                }}
+                onClick={() =>
+                  buttonText.value === 1
                     ? navigate("/research")
                     : navigate("/blog")
-                  : null
-              }
-            >
-              {buttonText.name}
-            </Button>
+                }
+              >
+                {buttonText.name}
+              </Button>
+            )}
           </div>
         </Card.Body>
       </Card>
