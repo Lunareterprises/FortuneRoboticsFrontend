@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import sampleVideo from "../assets/myVideo.mp4";
 import ProductCard from "../components/ProductCard";
 import robohand from "../assets/Robo_hand (1).png";
@@ -111,27 +111,36 @@ const Productservices = () => {
         </div>
       </Container>
 
-      <Container className="my-5 mb-4">
+      <Container className="my-5">
         {isLoading ? (
           <div className="text-center">Loading products...</div>
         ) : error ? (
           <div className="text-center text-danger">{error}</div>
         ) : (
-          <Row className="d-flex justify-content-center g-4 p-5">
-            {products?.map((product, index) => (
-              <ProductCard
-                key={index}
-                product={product}
-                buttonText={{
-                  name:
-                    activeButton === "products"
-                      ? product.price
-                      : "Request Quotes",
-                  value: activeButton === "products" ? 1 : 0,
-                }}
-              />
-            ))}
-          </Row>
+          // <Row className="d-flex justify-content-center g-4 p-5">
+
+          <div className="d-flex mt-3">
+            <div className="col-lg-2"></div>
+            <div className="col-lg-8">
+              <div className="row gy-3 gx-3 justify-content-center">
+                {products?.map((product, index) => (
+                  <ProductCard
+                    key={index}
+                    product={product}
+                    buttonText={{
+                      name:
+                        activeButton === "products"
+                          ? product.price
+                          : "Request Quotes",
+                      value: activeButton === "products" ? 1 : 0,
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="col-lg-2"></div>
+          </div>
+          // </Row>
         )}
       </Container>
 
@@ -163,15 +172,23 @@ const Productservices = () => {
         ) : error ? (
           <div className="text-center text-danger">{error}</div>
         ) : (
-          <Row className="d-flex justify-content-center g-3 p-4">
-            {rentals.map((rental, index) => (
-              <ProductCard
-                key={index}
-                product={rental}
-                buttonText={{ name: "Rent Now" }}
-              />
-            ))}
-          </Row>
+          // <Row className="d-flex justify-content-center g-3 p-4">
+          <div className="d-flex mt-3">
+            <div className="col-lg-2"></div>
+            <div className="col-lg-8">
+              <div className="row gy-3 gx-3 justify-content-center">
+                {rentals.map((rental, index) => (
+                  <ProductCard
+                    key={index}
+                    product={rental}
+                    buttonText={{ name: "Rent Now" }}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="col-lg-2"></div>
+            {/* </Row> */}
+          </div>
         )}
       </Container>
 
@@ -235,18 +252,13 @@ const Productservices = () => {
                 delivered.
               </p>
 
-              <Form
-                // onSubmit={handleSubmit}
-                className="d-flex flex-column align-items-center"
+              <Button
+                type="button"
+                className="w-50 rounded-1 small"
+                style={{ fontFamily: "Red Rose" }}
               >
-                <Button
-                  type="submit"
-                  className="w-50 rounded-1 small"
-                  style={{ fontFamily: "Red Rose" }}
-                >
-                  Explore Case Studies
-                </Button>
-              </Form>
+                Explore Case Studies
+              </Button>
             </Col>
 
             {/* Right Side Image */}

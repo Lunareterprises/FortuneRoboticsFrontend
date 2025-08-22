@@ -6,6 +6,7 @@ import ProductCard from "../components/ProductCard";
 import SubscriptionForm from "../components/SubscriptionForm";
 import image from "../assets/alone.png"; // Assuming you have a robot image
 import "../carrousal.css";
+import { useNavigate } from "react-router-dom";
 
 const mockProducts = [
   {
@@ -88,11 +89,9 @@ const Home = () => {
   const [activeButton, setActiveButton] = useState("products");
 
   useEffect(() => {
-    // This simulates a network request. In a real app, you would fetch from an API.
     const fetchProducts = () => {
       setIsLoading(true);
       try {
-        // Simulating a successful fetch with mock data
         setProducts(mockProducts);
         setRentals(mockRentals);
         setError(null);
@@ -103,9 +102,9 @@ const Home = () => {
         setIsLoading(false);
       }
     };
-
     fetchProducts();
   }, []);
+  const navigate = useNavigate();
 
   const cards = [
     {
@@ -322,38 +321,52 @@ const Home = () => {
           </div>
         </div>
       </Container>
-      <Container className="my-5 mb-3">
+      <Container className="my-4 mb-3">
         {isLoading ? (
           <div className="text-center">Loading products...</div>
         ) : error ? (
           <div className="text-center text-danger">{error}</div>
         ) : (
-          <Row className="d-flex justify-content-center">
-            {products.map((product, index) => (
-              <ProductCard
-                key={index}
-                product={product}
-                // buttonText={`${product.price} | Buy Now`}
-                buttonText={{
-                  name:
-                    activeButton === "products"
-                      ? product.price
-                      : "Request Quotes",
-                  value: activeButton === "products" ? 1 : 0,
-                }}
-              />
-            ))}
-          </Row>
+          // <Row className="d-flex justify-content-center">
+          <div className="d-flex mt-3">
+            <div className="col-lg-2"></div>
+            <div className="col-lg-8 row gy-3 gx-3">
+              {products.map((product, index) => (
+                <ProductCard
+                  key={index}
+                  product={product}
+                  // buttonText={`${product.price} | Buy Now`}
+                  buttonText={{
+                    name:
+                      activeButton === "products"
+                        ? product.price
+                        : "Request Quotes",
+                    value: activeButton === "products" ? 1 : 0,
+                  }}
+                />
+              ))}
+            </div>
+            <div className="col-lg-2"></div>
+          </div>
         )}
         <div className="text-center mt-5">
-          <Button variant="outline-primary rounded-0" className="btn">
+          <Button
+            variant="rounded-0"
+            className="btn cursor-pointer"
+            style={{
+              border: "1px solid hsla(211, 100%, 50%, 1)",
+              borderRadius: "0px",
+              color: "hsla(211, 100%, 50%, 1)",
+            }}
+            onClick={() => navigate("/products-services")}
+          >
             View All
           </Button>
         </div>
       </Container>
 
       {/* Flexible Robot Rentals Section */}
-      <Container className="my-5">
+      <Container className="my-4">
         <div className="text-center mb-2">
           <h2
             className="fw-bold"
@@ -381,18 +394,34 @@ const Home = () => {
         ) : error ? (
           <div className="text-center text-danger">{error}</div>
         ) : (
-          <Row className="d-flex justify-content-center">
-            {rentals.map((rental, index) => (
-              <ProductCard
-                key={index}
-                product={rental}
-                buttonText={{ name: "Rent Now" }}
-              />
-            ))}
-          </Row>
+          // <Row className="d-flex justify-content-center">
+          <div className="d-flex mt-3">
+            <div className="col-lg-2"></div>
+            <div className="col-lg-8 row gy-3 gx-3">
+              {rentals.map((rental, index) => (
+                <ProductCard
+                  key={index}
+                  product={rental}
+                  buttonText={{ name: "Rent Now" }}
+                />
+              ))}
+            </div>
+            <div className="col-lg-2"></div>
+          </div>
+          // </Row>
         )}
         <div className="text-center mt-4">
-          <Button variant="outline-primary rounded-0">View All</Button>
+          <Button
+            variant="rounded-0"
+            className="btn"
+            style={{
+              border: "1px solid hsla(211, 100%, 50%, 1)",
+              borderRadius: "0px",
+              color: "hsla(211, 100%, 50%, 1)",
+            }}
+          >
+            View All
+          </Button>
         </div>
       </Container>
       {/* client section  */}
