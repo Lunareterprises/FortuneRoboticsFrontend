@@ -180,7 +180,7 @@ const Casestudies = () => {
           </Container>
         )}
       </Container>
-      
+
       <Row className="mt-4">
         <Col className="d-flex justify-content-center">
           <CustomPagination
@@ -204,7 +204,7 @@ const Casestudies = () => {
           <button
             type="button"
             className="btn btn-sm btn-primary rounded-circle position-absolute top-0 end-0 m-2 d-flex align-items-center justify-content-center"
-            style={{ width: "10x", height: "19px" }}
+            style={{ width: "2x", height: "13px" }}
             onClick={() => setModalShow(false)}
           >
             <span aria-hidden="true" className="text-white fw-bold">

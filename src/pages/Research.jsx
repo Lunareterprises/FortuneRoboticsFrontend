@@ -33,7 +33,7 @@ const Research = () => {
 
   return (
     <div>
-      <div className="text-center mb-2 mt-4">
+      <div className="text-center mb-4 mt-5">
         <h2
           className="fw-bold"
           style={{
@@ -58,58 +58,340 @@ const Research = () => {
       </div>
 
       <Row>
-        <div className="col-lg-10 timeline-row">
-          <div className="timeline-item">
-            2025–2026
-            <div className="vertical-line"></div>
+        <Container className="col-lg-1"></Container>
+        <Container className="timeline-wrapper col-lg-8">
+          <div className="timeline-container">
+            <div className="timeline">
+              <div className="year-label">2025-2026</div>
+              <div className="year-label">2027-2028</div>
+              <div className="year-label">2029-2030</div>
+              <div className="year-label">Beyond 2030</div>
+            </div>
+
+            <div className="dashed-line dashed-line-1"></div>
+            <div className="dashed-line dashed-line-2"></div>
+            <div className="dashed-line dashed-line-3"></div>
+
+            <div className="timeline-box box-1">
+              <div className="d-flex align-items-center justify-content-between mb-2">
+                <h3
+                  style={{
+                    fontSize: "1rem",
+                    margin: 0,
+                    fontFamily: "Red Rose",
+                  }}
+                >
+                  AI-Enhanced Navigation
+                </h3>
+                <Badge
+                  bg="primary"
+                  className="rounded-0 text-truncate"
+                  style={{
+                    maxWidth: "170px", // adjust width
+                    fontSize: "0.65rem",
+                  }}
+                >
+                  PROTOTYPE IN FIELD TESTING
+                </Badge>
+              </div>
+              <p style={{ fontFamily: "Red Rose", fontSize: "0.85rem" }}>
+                Implementing deep learning algorithms for obstacle avoidance and
+                adaptive route optimization in dynamic urban environments.
+              </p>
+            </div>
+
+            <div className="timeline-box box-2">
+              <div className="d-flex align-items-center justify-content-between mb-2">
+                <h3
+                  style={{
+                    fontSize: "1rem",
+                    margin: 0,
+                    fontFamily: "Red Rose",
+                  }}
+                >
+                  Multi-Environment Robots
+                </h3>
+                <Badge
+                  bg="primary"
+                  className="rounded-0 text-truncate"
+                  style={{
+                    maxWidth: "170px", // adjust width
+                    fontSize: "0.65rem",
+                  }}
+                >
+                  DESIGN PHASE
+                </Badge>
+              </div>
+              <p style={{ fontFamily: "Red Rose", fontSize: "0.79rem" }}>
+                Robots capable of seamlessly transitioning between indoor and
+                outdoor operations using hybrid locomotion systems.
+              </p>
+            </div>
+
+            <div className="timeline-box box-3">
+              <div className="d-flex align-items-center justify-content-between mb-2">
+                <h3
+                  style={{
+                    fontSize: "1rem",
+                    margin: 0,
+                    fontFamily: "Red Rose",
+                  }}
+                >
+                  Energy-Efficient Robotics
+                </h3>
+                <Badge
+                  bg="primary"
+                  className="rounded-0 text-truncate"
+                  style={{
+                    maxWidth: "170px", // adjust width
+                    fontSize: "0.65rem",
+                  }}
+                >
+                  RESEARCH IN PROGRESS
+                </Badge>
+              </div>
+              <p style={{ fontFamily: "Red Rose" }}>
+                Integrating renewable energy modules and advanced battery tech
+                for extended operational hours.
+              </p>
+            </div>
+
+            <div className="timeline-box box-4">
+              <div className="d-flex align-items-center justify-content-between mb-2">
+                <h3
+                  style={{
+                    fontSize: "1rem",
+                    margin: 0,
+                    fontFamily: "Red Rose",
+                  }}
+                >
+                  Multi-Environment Robots
+                </h3>
+                <Badge
+                  bg="primary"
+                  className="rounded-0 text-truncate"
+                  style={{
+                    maxWidth: "170px", // adjust width
+                    fontSize: "0.65rem",
+                  }}
+                >
+                  Design Phase
+                </Badge>
+              </div>
+              <p style={{ fontFamily: "Red Rose" }}>
+                Robots capable of seamlessly transitioning between indoor and
+                outdoor operations using hybrid locomotion systems.
+              </p>
+            </div>
           </div>
+        </Container>
+        <Container className="col-lg-3"></Container>
 
-          <div className="timeline-item">
-            2027–2028
-            <div className="vertical-line"></div>
-          </div>
+        <style jsx>{`
+          .timeline-container {
+            position: relative;
+            min-height: 600px;
+            width: 100%;
+          }
 
-          <div className="timeline-item">
-            2029–2030
-            <div className="vertical-line"></div>
-          </div>
+          .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+          }
 
-          <div className="timeline-item">Beyond 2030</div>
+          .year-label {
+            width: 25%;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+            padding: 10px 0;
+            border-right: 1px dashed #ccc;
+            z-index: 1;
+            box-sizing: border-box;
+          }
 
-          <style jsx>{`
-            .timeline-row {
-              display: flex;
-              justify-content: space-around;
-              align-items: stretch; /* make children full height */
-              height: 300px; /* fixed row height */
-              overflow: hidden;
-              position: relative;
+          .year-label:last-child {
+            border-right: none;
+          }
+
+          .dashed-line {
+            position: absolute;
+            top: 0;
+            width: 2px;
+            height: 80%;
+            border-left: 2px dashed #999;
+            z-index: 0;
+          }
+
+          .dashed-line-1 {
+            left: 25%;
+          }
+          .dashed-line-2 {
+            left: 50%;
+          }
+          .dashed-line-3 {
+            left: 75%;
+          }
+
+          .timeline-box {
+            position: absolute;
+            background-color: #f8d7da;
+            border: 1px solid #e6c9d0;
+            padding: 10px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+            z-index: 1;
+            border-radius: 4px;
+            width: 400px;
+            max-width: 90%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          }
+
+          .timeline-box:hover {
+            transform: scale(1.02);
+          }
+
+          .box-1 {
+            left: 10%;
+            top: 80px;
+            width: 400px;
+          }
+          .box-2 {
+            left: 30%;
+            top: 188px;
+            width: 400px;
+          }
+          .box-3 {
+            left: 55%;
+            top: 274px;
+            width: 400px;
+          }
+          .box-4 {
+            left: 70%;
+            top: 358px;
+            width: 400px;
+          }
+
+          .timeline-box h3 {
+            margin: 0 0 7px 0;
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+            font-weight: bold;
+          }
+
+          .timeline-box p {
+            margin: 0;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #333;
+            text-align: left;
+          }
+
+          .status {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 8px;
+            background-color: #0066cc;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px;
+            text-transform: uppercase;
+            float: right;
+          }
+
+          /* Responsive adjustments */
+          @media (max-width: 1200px) {
+            .timeline-box {
+              width: 300px;
             }
-
-            .timeline-item {
-              position: relative;
-              flex: 1;
-              text-align: center;
-              height: 100%; /* ensure item fills row height */
+            .box-1 {
+              left: 5%;
             }
-
-            .vertical-line {
-              position: absolute;
-              right: -10px;
-              top: 0;
-              width: 2px;
-              height: 100%; /* now matches full row height */
-              border-left: 2px dotted #6c757d;
+            .box-2 {
+              left: 28%;
             }
-
-            .timeline-item:last-child .vertical-line {
-              display: none;
+            .box-3 {
+              left: 55%;
             }
-          `}</style>
-        </div>
+            .box-4 {
+              left: 72%;
+            }
+          }
+
+          @media (max-width: 992px) {
+            .timeline-box {
+              width: 220px;
+            }
+            .box-1 {
+              left: 5%;
+              top: 60px;
+            }
+            .box-2 {
+              left: 28%;
+              top: 180px;
+            }
+            .box-3 {
+              left: 55%;
+              top: 300px;
+            }
+            .box-4 {
+              left: 72%;
+              top: 420px;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .timeline-box {
+              width: 180px;
+            }
+            .box-1 {
+              left: 5%;
+              top: 50px;
+            }
+            .box-2 {
+              left: 28%;
+              top: 150px;
+            }
+            .box-3 {
+              left: 55%;
+              top: 250px;
+            }
+            .box-4 {
+              left: 72%;
+              top: 350px;
+            }
+          }
+
+          @media (max-width: 576px) {
+            .timeline-box {
+              width: 140px;
+            }
+            .box-1 {
+              left: 5%;
+              top: 40px;
+            }
+            .box-2 {
+              left: 28%;
+              top: 120px;
+            }
+            .box-3 {
+              left: 55%;
+              top: 200px;
+            }
+            .box-4 {
+              left: 72%;
+              top: 280px;
+            }
+          }
+        `}</style>
       </Row>
+
       <Row>
-        <div className="text-center pt-5">
+        <div className="text-center pt-1">
           <h2
             className="fw-bold"
             style={{ fontFamily: "Red Rose", fontSize: "35px" }}
@@ -123,7 +405,7 @@ const Research = () => {
             Empowering robots to think, see, and move with unmatched precision.
           </p>
         </div>
-        <Container className="my-2">
+        <Container className="my-1">
           <div className="col-lg-2"></div>
           {isLoading ? (
             <div className="text-center">Loading products...</div>
