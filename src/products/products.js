@@ -187,4 +187,284 @@ export const caseStudies = [
     client: "ShopSmart",
     place: "London, UK",
   },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+  {
+    badges: ["Retail", "Mobile Payments", "User Experience"],
+    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    title: "Supply Chain Management",
+    subtittle:
+      "Learn how mobile payment integration streamlined transactions and reduced wait times by 50%, enhancing customer retention.",
+    client: "ShopSmart",
+    place: "London, UK",
+  },
+
 ];

@@ -413,7 +413,7 @@ const Home = () => {
         <div className="text-center mt-4">
           <Button
             variant="rounded-0"
-            className="btn"
+            className="btn cursor-pointer"
             style={{
               border: "1px solid hsla(211, 100%, 50%, 1)",
               borderRadius: "0px",
