@@ -7,10 +7,12 @@ import SubscriptionForm from "../components/SubscriptionForm";
 import image from "../assets/alone.png"; // Assuming you have a robot image
 import "../carrousal.css";
 import { useNavigate } from "react-router-dom";
+import image1 from "../assets/img1.jpg";
+// import { mockProducts, mockRentals } from "../products/products";
 
 const mockProducts = [
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=YOUBOT+L-Series",
+    image: image1,
     tags: ["Warehouses", "Factories", "Logistics Hubs"],
     title: "YOUBOT L-Series (AMR)",
     text: "This innovation trash disposal solution is designed to minimize waste in urban",
@@ -22,7 +24,7 @@ const mockProducts = [
     price: "4200 AED",
   },
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    image: image1,
     tags: ["Cafes", "Clinics", "Co-working Spaces"],
     title: "Amy Deliverer",
     highlights: [
@@ -34,7 +36,7 @@ const mockProducts = [
     price: "4200 AED",
   },
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=D2+Delivery+Robot",
+    image: image1,
     tags: ["Restaurants", "Malls", "Hospitals"],
     title: "D2 Delivery Robot",
     highlights: [
@@ -50,7 +52,7 @@ const mockProducts = [
 // New mock data for rental products with prices included
 const mockRentals = [
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=YOUBOT+L-Series",
+    image: image1,
     tags: ["Warehouses", "Factories", "Logistics Hubs"],
     title: "YOUBOT L-Series (AMR)",
     highlights: [
@@ -60,7 +62,7 @@ const mockRentals = [
     ],
   },
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    image: robo,
     tags: ["Cafes", "Clinics", "Co-working Spaces"],
     title: "Amy Deliverer",
     highlights: [
@@ -70,7 +72,7 @@ const mockRentals = [
     ],
   },
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=D2+Delivery+Robot",
+    image: image1,
     tags: ["Restaurants", "Malls", "Hospitals"],
     title: "D2 Delivery Robot",
     highlights: [
@@ -397,7 +399,7 @@ const Home = () => {
           // <Row className="d-flex justify-content-center">
           <div className="d-flex mt-3">
             <div className="col-lg-2"></div>
-            <div className="col-lg-8 row gy-3 gx-3">
+            <div className="col-lg-8 row gy-3 gx-3 justify-content-center">
               {rentals.map((rental, index) => (
                 <ProductCard
                   key={index}

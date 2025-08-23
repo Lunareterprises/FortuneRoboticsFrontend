@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Badge, Button, Card, Col, Container, Row } from "react-bootstrap";
 import { innovation, currentproject } from "../products/products";
-import robo from "../assets/robo.jpeg";
 import image from "../assets/img1.jpg";
 import video from "../assets/myVideo.mp4";
+import CaseStudy from "../components/CaseStudy";
 
 const Research = () => {
   const [products, setProducts] = useState([]);
@@ -708,7 +708,7 @@ const Research = () => {
                       Your description goes here
                     </p>
                   </div>
-                                    <div
+                  <div
                     className="position-absolute start-0 d-flex flex-column gap-1 align-items-start"
                     style={{ bottom: "130px" }}
                   >
@@ -863,6 +863,81 @@ const Research = () => {
           </Col>
           <Col md={2} sm={1}></Col>
         </Container>
+      </Row>
+      <Row className="mb-4">
+        <div
+          className="text-white d-flex align-items-center mt-3 position-relative hero-section"
+          style={{
+            width: "100%",
+            background: "linear-gradient(to bottom, #1e2a3b, #152049)",
+            overflow: "visible", // allow overflow outside this div
+          }}
+        >
+          <CaseStudy />
+        </div>
+      </Row>
+      <Row>
+        <Container>
+          <div className="text-center">
+            <h2
+              className="fw-bold"
+              style={{
+                fontFamily: "Red Rose",
+                fontWeight: "bold",
+                fontSize: "44px",
+              }}
+            >
+              Robotics Trends You Need To Know
+            </h2>
+            <p
+              className="text-muted"
+              style={{
+                fontSize: "18px",
+                fontFamily: "Red Rose",
+              }}
+            >
+              Stay ahead with data-driven insights and future predictions from
+              the world of robotics
+            </p>
+          </div>
+        </Container>
+        <Row className="justify-content-center">
+          <Col xs={0} md={2}></Col>
+          <Col xs={12} md={8}>
+            <Row className="gy-3 gx-3 justify-content-center">
+                <Col xs={12} sm={6} md={6} >
+                  <Card className="w-100 rounded-0 h-100 d-flex">
+                    <Row className="g-0 flex-grow-1">
+                      {/* Image Column */}
+                      <Col
+                        xs={12}
+                        sm={4}
+                        className="d-flex"
+                        style={{ minHeight: "150px" }} // minimum height for small content
+                      >
+                        <Card.Img
+                          src={image}
+                          className="w-100 rounded-0"
+                          style={{
+                            objectFit: "cover",
+                            height: "100%",
+                          }}
+                        />
+                      </Col>
+
+                      {/* Text Column */}
+                      <Col xs={12} sm={8} className="d-flex">
+                        <Card.Body className="d-flex flex-column justify-content-between w-100">
+                        
+                        </Card.Body>
+                      </Col>
+                    </Row>
+                  </Card>
+                </Col>
+            </Row>
+          </Col>
+          <Col xs={0} md={2}></Col>
+        </Row>
       </Row>
     </div>
   );

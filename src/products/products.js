@@ -1,6 +1,8 @@
+import productImg from "../assets/img1.jpg";
+
 export const mockProducts = [
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=YOUBOT+L-Series",
+    image: productImg,
     tags: ["Warehouses", "Factories", "Logistics Hubs"],
     title: "YOUBOT L-Series (AMR)",
     text: "This innovation trash disposal solution is designed to minimize waste in urban",
@@ -12,7 +14,7 @@ export const mockProducts = [
     price: "4200 AED",
   },
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    image: productImg,
     tags: ["Cafes", "Clinics", "Co-working Spaces"],
     title: "Amy Deliverer",
     highlights: [
@@ -24,7 +26,7 @@ export const mockProducts = [
     price: "4200 AED",
   },
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=D2+Delivery+Robot",
+    image: productImg,
     tags: ["Restaurants", "Malls", "Hospitals"],
     title: "D2 Delivery Robot",
     highlights: [
@@ -37,7 +39,7 @@ export const mockProducts = [
   },
 
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=D2+Delivery+Robot",
+    image: productImg,
     tags: ["Restaurants", "Malls", "Hospitals"],
     title: "D2 Delivery Robot",
     highlights: [
@@ -49,7 +51,7 @@ export const mockProducts = [
     price: "4200 AED",
   },
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=D2+Delivery+Robot",
+    image: productImg,
     tags: ["Restaurants", "Malls", "Hospitals"],
     title: "D2 Delivery Robot",
     highlights: [
@@ -61,7 +63,7 @@ export const mockProducts = [
     price: "4200 AED",
   },
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=D2+Delivery+Robot",
+    image: productImg,
     tags: ["Restaurants", "Malls", "Hospitals"],
     title: "D2 Delivery Robot",
     highlights: [
@@ -77,7 +79,7 @@ export const mockProducts = [
 // New mock data for rental products with prices included
 export const mockRentals = [
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=YOUBOT+L-Series",
+    image: productImg,
     tags: ["Warehouses", "Factories", "Logistics Hubs"],
     title: "YOUBOT L-Series (AMR)",
     highlights: [
@@ -87,7 +89,7 @@ export const mockRentals = [
     ],
   },
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=Amy+Deliverer",
+    image: productImg,
     tags: ["Cafes", "Clinics", "Co-working Spaces"],
     title: "Amy Deliverer",
     highlights: [
@@ -97,7 +99,7 @@ export const mockRentals = [
     ],
   },
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=D2+Delivery+Robot",
+    image: productImg,
     tags: ["Restaurants", "Malls", "Hospitals"],
     title: "D2 Delivery Robot",
     highlights: [
@@ -107,7 +109,7 @@ export const mockRentals = [
     ],
   },
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=D2+Delivery+Robot",
+    image: productImg,
     tags: ["Restaurants", "Malls", "Hospitals"],
     title: "D2 Delivery Robot",
     highlights: [
@@ -117,7 +119,7 @@ export const mockRentals = [
     ],
   },
   {
-    image: "https://placehold.co/400x300/e9e9e9/000000?text=D2+Delivery+Robot",
+    image: productImg,
     tags: ["Restaurants", "Malls", "Hospitals"],
     title: "D2 Delivery Robot",
     highlights: [
@@ -510,11 +512,10 @@ export const innovation = [
 export const currentproject = [
   {
     title: "Artificial Intelligence for Decision Making",
-    sub:"Fortune Robotics integrates deep learning and predictive algorithms, enabling robots to analyze environments, anticipate challenges, and make autonomous decisions without human intervention"
+    sub: "Fortune Robotics integrates deep learning and predictive algorithms, enabling robots to analyze environments, anticipate challenges, and make autonomous decisions without human intervention",
   },
-    {
+  {
     title: "VisionX",
-    sub:"Next-gen visual recognition for retail & security robotics."
+    sub: "Next-gen visual recognition for retail & security robotics.",
   },
-  
 ];

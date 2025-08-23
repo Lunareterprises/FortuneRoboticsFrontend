@@ -4,6 +4,7 @@ import sampleVideo from "../assets/myVideo.mp4";
 import ProductCard from "../components/ProductCard";
 import robohand from "../assets/Robo_hand (1).png";
 import { mockProducts, mockRentals } from "../products/products";
+import CaseStudy from "../components/CaseStudy";
 
 const Productservices = () => {
   const [activeButton, setActiveButton] = useState("products");
@@ -200,150 +201,7 @@ const Productservices = () => {
           overflow: "visible", // allow overflow outside this div
         }}
       >
-        <Container fluid style={{ overflow: "visible" }} className="p-5">
-          <Row className="align-items-center" style={{ overflow: "visible" }}>
-            {/* Text & Form */}
-            <Col md={8} className="mb-4 mb-md-0">
-              <h2
-                className="fw-bold mb-1"
-                style={{
-                  fontSize: "2rem",
-                  fontFamily: "Red Rose",
-                  textAlign: "center",
-                }}
-              >
-                OUR CASE STUDIES
-              </h2>
-              <h3
-                className="fw-light mb-4"
-                style={{
-                  fontSize: "0.99rem",
-                  fontFamily: "Red Rose",
-                  textAlign: "center",
-                }}
-              >
-                Explore how our robotics solutions have transformed industries —{" "}
-                <br />
-                delivering efficiency, innovation, and measurable success.
-              </h3>
-              <h4
-                className="fw-light mb-4 mx-5"
-                style={{
-                  fontSize: "0.99rem",
-                  fontFamily: "Red Rose",
-                  textAlign: "left", // changed from "center" to "right"
-                }}
-              >
-                At Fortune Robotics, every project is a story of innovation
-                meeting impact. From hospitality and retail to events and
-                education, our robots have been deployed to solve real
-                challenges, enhance customer experience, and drive business
-                growth.
-              </h4>
-              <p
-                className="fw-light mb-4 mx-5"
-                style={{
-                  fontSize: "0.99rem",
-                  fontFamily: "Red Rose",
-                  textAlign: "left",
-                }}
-              >
-                Discover the industries we’ve transformed and the results we’ve
-                delivered.
-              </p>
-
-              <Button
-                type="button"
-                className="w-50 rounded-1 small"
-                style={{ fontFamily: "Red Rose" }}
-              >
-                Explore Case Studies
-              </Button>
-            </Col>
-
-            {/* Right Side Image */}
-            <Col
-              md={4}
-              className="d-none d-md-block position-relative hero-col"
-            >
-              <img
-                src={robohand}
-                alt="Futuristic robot"
-                className="hero-image"
-              />
-            </Col>
-          </Row>
-
-          {/* Media Queries */}
-          <style jsx>{`
-            .hero-section {
-              height: 58vh; /* default height */
-            }
-            .hero-col {
-              position: relative;
-              min-height: 285px;
-              overflow: visible; /* allow overflow */
-            }
-
-            .hero-image {
-              position: absolute;
-              top: 19px;
-              right: 180px;
-              height: 120%; /* overflow top */
-              object-fit: cover;
-              z-index: 0;
-
-              /* Dissolve effect at the bottom */
-              -webkit-mask-image: linear-gradient(
-                to top,
-                rgba(0, 0, 0, 1) 70%,
-                rgba(0, 0, 0, 0) 100%
-              );
-              -webkit-mask-repeat: no-repeat;
-              -webkit-mask-size: cover;
-              mask-image: linear-gradient(
-                to top,
-                rgba(0, 0, 0, 1) 70%,
-                rgba(0, 0, 0, 0) 100%
-              );
-              mask-repeat: no-repeat;
-              mask-size: cover;
-            }
-
-            /* Responsive adjustments */
-            @media (max-width: 1199px) {
-              .hero-section {
-                height: 39vh; /* default height */
-              }
-              .hero-image {
-                height: 128%;
-                right: -70px;
-              }
-            }
-
-            @media (max-width: 912px) {
-              .hero-image {
-                height: 137%;
-                left: 1px;
-              }
-            }
-
-            @media (max-width: 575px) {
-              .hero-section {
-                height: 72vh; /* default height */
-              }
-              .hero-col {
-                min-height: 250px;
-                flex: 0 0 100%; /* full width col */
-                max-width: 100%;
-              }
-              .hero-image {
-                height: 90%;
-                right: 20px;
-              }
-            }
-          `}</style>
-        </Container>
+        <CaseStudy/>
       </div>
     </div>
   );

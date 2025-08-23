@@ -15,13 +15,32 @@ const ProductCard = ({ product, buttonText }) => {
           boxShadow: "0 4px 5px rgba(0, 0, 0, 0.15)",
         }}
       >
-        <div style={{ position: "relative" }}>
-          <Card.Img variant="top" src={product.image} />
+        <div
+          style={{
+            position: "relative",
+            width: "100%", // full width of parent
+            paddingTop: "66.66%", // 3:2 aspect ratio (change if needed)
+            overflow: "hidden",
+          }}
+        >
+          <Card.Img
+            variant="top"
+            src={product.image}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+            }}
+          />
+
           <div
             style={{
               position: "absolute",
-              bottom: "8px",
-              left: "10px",
+              bottom: "0px",
+              left: "1px",
             }}
           >
             {product.tags.slice(0, 2).map((tag, idx) => (
@@ -45,13 +64,19 @@ const ProductCard = ({ product, buttonText }) => {
           >
             Key Highlights :
           </p>
-          <ul className="mb-3 flex-grow-1">
+          <ul className="mb-3 flex-grow-1 custom-bullets">
             {product.highlights.map((item, idx) => (
               <li key={idx} style={{ fontSize: "12px" }}>
                 {item}
               </li>
             ))}
           </ul>
+          <style jsx>{`
+            .custom-bullets li::marker {
+              color: hsla(211, 100%, 50%, 1); /* bullet color */
+              font-size: 1.2em; /* makes bullet bigger (thicker visually) */
+            }
+          `}</style>
 
           <div className="d-grid gap-2 mt-auto">
             {buttonText && buttonText !== "" && (
