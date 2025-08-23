@@ -3,6 +3,7 @@ import { Badge, Button, Card, Col, Container, Row } from "react-bootstrap";
 import { innovation, currentproject } from "../products/products";
 import robo from "../assets/robo.jpeg";
 import image from "../assets/img1.jpg";
+import video from "../assets/myVideo.mp4";
 
 const Research = () => {
   const [products, setProducts] = useState([]);
@@ -33,35 +34,35 @@ const Research = () => {
 
   return (
     <div>
-      <div className="text-center mb-4 mt-5">
-        <h2
-          className="fw-bold"
-          style={{
-            fontFamily: "Red Rose",
-            fontWeight: "bold",
-            fontSize: "30px",
-          }}
-        >
-          R&D Roadmap – Future of <br /> Robotics @ Fortune
-        </h2>
-        <p
-          className="text-muted"
-          style={{
-            fontSize: "17px",
-            fontFamily: "Red Rose",
-          }}
-        >
-          From conceptual innovation to real-world deployment, discover how
-          Fortune <br />
-          Robotics is engineering tomorrow.
-        </p>
-      </div>
+      <Row className="roadmap-row mb-5">
+        <div className="text-center mb-4 mt-4">
+          <h2
+            className="fw-bold"
+            style={{
+              fontFamily: "Red Rose",
+              fontWeight: "bold",
+              fontSize: "36px",
+            }}
+          >
+            R&D Roadmap – Future of <br /> Robotics @ Fortune
+          </h2>
+          <p
+            className="text-muted"
+            style={{
+              fontSize: "17px",
+              fontFamily: "Red Rose",
+            }}
+          >
+            From conceptual innovation to real-world deployment, discover how
+            Fortune <br />
+            Robotics is engineering tomorrow.
+          </p>
+        </div>
 
-      <Row>
         <Container className="col-lg-1"></Container>
         <Container className="timeline-wrapper col-lg-8">
           <div className="timeline-container">
-            <div className="timeline">
+            <div className="timeline" style={{ fontFamily: "Red Rose" }}>
               <div className="year-label">2025-2026</div>
               <div className="year-label">2027-2028</div>
               <div className="year-label">2029-2030</div>
@@ -188,9 +189,71 @@ const Research = () => {
         <Container className="col-lg-3"></Container>
 
         <style jsx>{`
+          .roadmap-row {
+            position: relative;
+            overflow: visible;
+            padding: 10px 0;
+            background: #fff;
+            z-index: 1; /* content above backgrounds */
+          }
+
+          /* Radial circle gradient (existing) */
+          .roadmap-row::before {
+            content: "";
+            position: absolute;
+            top: 64%;
+            left: 52%;
+            transform: translate(-59%, -50%);
+            width: 1500px;
+            height: 620px;
+            filter: blur(20px);
+            background: radial-gradient(
+                circle at center,
+                rgba(15, 107, 220, 0.6) 0%,
+                rgba(15, 107, 220, 0.3) 20%,
+                transparent 35%
+              ),
+              radial-gradient(
+                circle at center,
+                rgba(15, 107, 220, 0.25) 0%,
+                rgba(15, 107, 220, 0.15) 45%,
+                transparent 60%
+              );
+            z-index: 0; /* behind content */
+            pointer-events: none;
+          }
+
+          /* Grid / net background */
+          .roadmap-row::after {
+            content: "";
+            position: absolute;
+            top: 30%;
+            left: 21%;
+            width: 45%;
+            height: 65%;
+            z-index: -1; /* behind radial gradient */
+            pointer-events: none;
+
+            background-image: repeating-linear-gradient(
+                0deg,
+                /* horizontal lines */ transparent,
+                transparent 39px,
+                rgba(59, 59, 59, 0.11) 39px,
+                rgba(59, 59, 59, 0.11) 40px
+              ),
+              repeating-linear-gradient(
+                90deg,
+                /* vertical lines */ transparent,
+                transparent 39px,
+                rgba(59, 59, 59, 0.11) 39px,
+                rgba(59, 59, 59, 0.11) 40px
+              );
+            background-size: 150px 150px; /* grid cell size */
+          }
+
           .timeline-container {
             position: relative;
-            min-height: 600px;
+            min-height: 550px;
             width: 100%;
           }
 
@@ -204,7 +267,6 @@ const Research = () => {
           .year-label {
             width: 25%;
             text-align: center;
-            font-weight: bold;
             color: #333;
             padding: 10px 0;
             border-right: 1px dashed #ccc;
@@ -219,10 +281,18 @@ const Research = () => {
           .dashed-line {
             position: absolute;
             top: 0;
-            width: 2px;
-            height: 80%;
-            border-left: 2px dashed #999;
+            width: 1px;
+            height: 95%;
             z-index: 0;
+
+            /* vertical dashed line with custom dash length */
+            background-image: repeating-linear-gradient(
+              to bottom,
+              #999,
+              /* dash color */ #99999953 15px,
+              /* dash length */ transparent 10px,
+              /* gap start */ transparent 30px /* gap end */
+            );
           }
 
           .dashed-line-1 {
@@ -238,12 +308,14 @@ const Research = () => {
           .timeline-box {
             position: absolute;
             background-color: #f8d7da;
-            border: 1px solid #e6c9d0;
+            border-style: solid none none solid; /* top right bottom left */
+            border-width: 1px 1px 0 0;
+            border-color: #3d3df0ff;
             padding: 10px;
             box-sizing: border-box;
             transition: transform 0.3s ease;
             z-index: 1;
-            border-radius: 4px;
+            border-radius: 1px;
             width: 400px;
             max-width: 90%;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -391,7 +463,7 @@ const Research = () => {
       </Row>
 
       <Row>
-        <div className="text-center pt-1">
+        <div className="text-center">
           <h2
             className="fw-bold"
             style={{ fontFamily: "Red Rose", fontSize: "35px" }}
@@ -565,12 +637,8 @@ const Research = () => {
                             <Button
                               variant="primary"
                               type="submit"
-                              className="rounded-0 mt-3 align-self-start"
-                              style={{
-                                fontFamily: "Red Rose",
-                                fontSize: "12px",
-                                width: "80%",
-                              }}
+                              className="rounded-0 mt-3 align-self-start w-75 text-uppercase fw-semibold"
+                              style={{ fontSize: "11px" }}
                             >
                               View Case Study
                             </Button>
@@ -602,6 +670,7 @@ const Research = () => {
             Where ideas transform into intelligent machines.
           </p>
         </div>
+
         <Container className="d-flex my-5">
           <Col md={2} sm={1}></Col>
           <Col md={8} sm={6}>
@@ -614,15 +683,59 @@ const Research = () => {
                 className="mb-2 d-flex justify-content-center"
               >
                 <Card
-                  className="custom-card"
+                  className="custom-card position-relative overflow-hidden"
                   style={{
                     borderRadius: "0px",
-                    maxWidth: "270px",
-                    height: "370px",
+                    maxWidth: "284px",
+                    height: "445px",
                     boxShadow: "0 4px 5px rgba(0, 0, 0, 0.15)",
                   }}
                 >
-                  <Card.Body className="d-flex flex-column"></Card.Body>
+                  <video
+                    src={video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-100 h-100 object-fit-cover"
+                  />
+                  <div
+                    className="position-absolute  bottom-0 start-0  d-flex flex-column justify-content-center align-items-center text-center text-white p-3"
+                    style={{ fontFamily: "Red Rose" }}
+                  >
+                    <h6 className="mb-2">Concept & Design stage</h6>
+                    <p className="mb-0" style={{ fontSize: "12px" }}>
+                      Your description goes here
+                    </p>
+                  </div>
+                                    <div
+                    className="position-absolute start-0 d-flex flex-column gap-1 align-items-start"
+                    style={{ bottom: "130px" }}
+                  >
+                    <Badge
+                      bg="primary"
+                      className="rounded-0 text-start"
+                      style={{ fontSize: "0.75rem" }}
+                    >
+                      Engineers Soldering Circuits
+                    </Badge>
+
+                    <Badge
+                      bg="primary"
+                      className="rounded-0 text-start"
+                      style={{ fontSize: "0.75rem" }}
+                    >
+                      Assembling Robotic Arms
+                    </Badge>
+
+                    <Badge
+                      bg="primary"
+                      className="rounded-0 text-start"
+                      style={{ fontSize: "0.75rem" }}
+                    >
+                      Installing Sensors
+                    </Badge>
+                  </div>
                 </Card>
               </Col>
 
@@ -634,15 +747,59 @@ const Research = () => {
                 className="mb-2 d-flex justify-content-center"
               >
                 <Card
-                  className="custom-card"
+                  className="custom-card position-relative overflow-hidden"
                   style={{
                     borderRadius: "0px",
-                    maxWidth: "270px",
-                    height: "370px",
+                    maxWidth: "284px",
+                    height: "445px",
                     boxShadow: "0 4px 5px rgba(0, 0, 0, 0.15)",
                   }}
                 >
-                  <Card.Body className="d-flex flex-column"></Card.Body>
+                  <video
+                    src={video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-100 h-100 object-fit-cover"
+                  />
+                  <div
+                    className="position-absolute  bottom-0 start-0  d-flex flex-column justify-content-center align-items-center text-center text-white p-3"
+                    style={{ fontFamily: "Red Rose" }}
+                  >
+                    <h6 className="mb-2">Testing & Evaluation stage</h6>
+                    <p className="mb-0" style={{ fontSize: "12px" }}>
+                      Your description goes here
+                    </p>
+                  </div>
+                  <div
+                    className="position-absolute start-0 d-flex flex-column gap-1 align-items-start"
+                    style={{ bottom: "130px" }}
+                  >
+                    <Badge
+                      bg="primary"
+                      className="rounded-0 text-start"
+                      style={{ fontSize: "0.75rem" }}
+                    >
+                      Engineers Soldering Circuits
+                    </Badge>
+
+                    <Badge
+                      bg="primary"
+                      className="rounded-0 text-start"
+                      style={{ fontSize: "0.75rem" }}
+                    >
+                      Assembling Robotic Arms
+                    </Badge>
+
+                    <Badge
+                      bg="primary"
+                      className="rounded-0 text-start"
+                      style={{ fontSize: "0.75rem" }}
+                    >
+                      Installing Sensors
+                    </Badge>
+                  </div>
                 </Card>
               </Col>
               <Col
@@ -652,20 +809,58 @@ const Research = () => {
                 className="mb-2 d-flex justify-content-center"
               >
                 <Card
-                  className="custom-card"
-                  style={{
-                    borderRadius: "0px",
-                    maxWidth: "270px",
-                    height: "370px",
-                    boxShadow: "0 4px 5px rgba(0, 0, 0, 0.15)",
-                  }}
+                  className="custom-card position-relative overflow-hidden rounded-0 shadow-sm"
+                  style={{ maxWidth: "284px", height: "445px" }}
                 >
-                  <Card.Body className="d-flex flex-column"></Card.Body>
+                  {/* Video Background */}
+                  <video
+                    src={video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-100 h-100 object-fit-cover"
+                  />
+                  <div className="position-absolute bottom-0 start-0 w-100 text-center text-white p-3">
+                    <h6 className="mb-1">Concept &amp; Design stage</h6>
+                    <p className="mb-0 fs-6">Your description goes here</p>
+                  </div>
+                  <div className="position-absolute bottom-0 start-0 w-100 text-center text-white p-3">
+                    <h6 className="mb-1">Concept &amp; Design stage</h6>
+                    <p className="mb-0 fs-6">Your description goes here</p>
+                  </div>
+                  <div
+                    className="position-absolute start-0 d-flex flex-column gap-1 align-items-start"
+                    style={{ bottom: "130px" }}
+                  >
+                    <Badge
+                      bg="primary"
+                      className="rounded-0 text-start"
+                      style={{ fontSize: "0.75rem" }}
+                    >
+                      Engineers Soldering Circuits
+                    </Badge>
+
+                    <Badge
+                      bg="primary"
+                      className="rounded-0 text-start"
+                      style={{ fontSize: "0.75rem" }}
+                    >
+                      Assembling Robotic Arms
+                    </Badge>
+
+                    <Badge
+                      bg="primary"
+                      className="rounded-0 text-start"
+                      style={{ fontSize: "0.75rem" }}
+                    >
+                      Installing Sensors
+                    </Badge>
+                  </div>
                 </Card>
               </Col>
             </Row>
           </Col>
-
           <Col md={2} sm={1}></Col>
         </Container>
       </Row>
