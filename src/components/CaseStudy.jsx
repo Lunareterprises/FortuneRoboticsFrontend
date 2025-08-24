@@ -1,6 +1,8 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import robohand from "../assets/Robo_hand (1).png";
+import { useNavigate } from "react-router-dom";
 const CaseStudy = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Container fluid style={{ overflow: "visible" }} className="p-5">
@@ -64,6 +66,7 @@ const CaseStudy = () => {
                 color: "hsla(211, 100%, 50%, 1)",
                 border: "0px solid hsla(211, 100%, 50%, 1)", // optional, looks cleaner
               }}
+              onClick={() => navigate("/casestudies")}
             >
               Explore Case Studies
             </Button>

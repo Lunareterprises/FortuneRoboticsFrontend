@@ -876,68 +876,175 @@ const Research = () => {
           <CaseStudy />
         </div>
       </Row>
-      <Row>
-        <Container>
-          <div className="text-center">
-            <h2
-              className="fw-bold"
-              style={{
-                fontFamily: "Red Rose",
-                fontWeight: "bold",
-                fontSize: "44px",
-              }}
-            >
-              Robotics Trends You Need To Know
-            </h2>
-            <p
-              className="text-muted"
-              style={{
-                fontSize: "18px",
-                fontFamily: "Red Rose",
-              }}
-            >
-              Stay ahead with data-driven insights and future predictions from
-              the world of robotics
-            </p>
-          </div>
-        </Container>
-        <Row className="justify-content-center">
-          <Col xs={0} md={2}></Col>
-          <Col xs={12} md={8}>
-            <Row className="gy-3 gx-3 justify-content-center">
-                <Col xs={12} sm={6} md={6} >
-                  <Card className="w-100 rounded-0 h-100 d-flex">
-                    <Row className="g-0 flex-grow-1">
-                      {/* Image Column */}
-                      <Col
-                        xs={12}
-                        sm={4}
-                        className="d-flex"
-                        style={{ minHeight: "150px" }} // minimum height for small content
-                      >
-                        <Card.Img
-                          src={image}
-                          className="w-100 rounded-0"
-                          style={{
-                            objectFit: "cover",
-                            height: "100%",
-                          }}
-                        />
-                      </Col>
 
+      <Row>
+        <div className="text-center">
+          <h2
+            className="fw-bold"
+            style={{
+              fontFamily: "Red Rose",
+              fontWeight: "bold",
+              fontSize: "44px",
+            }}
+          >
+            Robotics Trends You Need To Know
+          </h2>
+          <p
+            className="text-muted"
+            style={{
+              fontSize: "18px",
+              fontFamily: "Red Rose",
+            }}
+          >
+            Stay ahead with data-driven insights and future predictions from the
+            world of robotics
+          </p>
+        </div>
+
+        <Container className="my-3">
+          <Row className="justify-content-center">
+            <Col xs={0} md={1}></Col>
+            <Col xs={12} md={10}>
+              <Row className="gy-3 gx-4 justify-content-center">
+                <Col xs={12} sm={6} md={6}>
+                  <Card className="w-100 rounded-0 shadow-sm">
+                    <Row className="g-0">
                       {/* Text Column */}
-                      <Col xs={12} sm={8} className="d-flex">
-                        <Card.Body className="d-flex flex-column justify-content-between w-100">
-                        
+                      <Col xs={12}>
+                        <Card.Body className="d-flex flex-column justify-content-between w-100 gap-2">
+                          <h2
+                            className="text-center mb-3 fw-bold"
+                            style={{
+                              fontFamily: "Red Rose",
+                              fontSize: "30px",
+                            }}
+                          >
+                            Info Graphics Gallery
+                          </h2>
+                          <Card className="w-100 rounded-0">
+                            <Card.Body className="ps-0">
+                              <ul className="mb-0 custom-dots fs-5">
+                                <li>
+                                  SLAM (Simultaneous Localization and Mapping)
+                                  Technology
+                                </li>
+                              </ul>
+                            </Card.Body>
+                          </Card>
+                          <Card className="w-100 rounded-0">
+                            <Card.Body className="ps-0">
+                              <ul className="mb-0 custom-dots fs-5">
+                                <li>
+                                  LIDAR (Light Detection and Ranging) Systems
+                                </li>
+                              </ul>
+                            </Card.Body>
+                          </Card>
+                          <Card className="w-100 rounded-0">
+                            <Card.Body className="ps-0">
+                              <ul className="mb-0 custom-dots fs-5">
+                                <li>
+                                  GPS (Global Positioning System) Navigation
+                                </li>
+                              </ul>
+                            </Card.Body>
+                          </Card>
+                          <Card className="w-100 rounded-0">
+                            <Card.Body className="ps-0">
+                              <ul className="mb-0 custom-dots fs-5">
+                                <li>Computer Vision Algorithms</li>
+                              </ul>
+                            </Card.Body>
+                          </Card>
+                          <Card className="w-100 rounded-0">
+                            <Card.Body className="ps-0">
+                              <ul className="mb-0 custom-dots fs-5">
+                                <li>Depth Sensing Cameras</li>
+                              </ul>
+                            </Card.Body>
+                          </Card>
+                          <Card className="w-100 rounded-0">
+                            <Card.Body className="ps-0">
+                              <ul className="mb-0 custom-dots fs-5">
+                                <li>TArtificial Intelligence in Robotics</li>
+                              </ul>
+                            </Card.Body>
+                          </Card>
+                          <Card className="w-100 rounded-0">
+                            <Card.Body className="ps-0">
+                              <ul className="mb-0 custom-dots fs-5">
+                                <li>
+                                  Drones with Autonomous Flight Capabilities
+                                </li>
+                              </ul>
+                            </Card.Body>
+                          </Card>
                         </Card.Body>
                       </Col>
                     </Row>
                   </Card>
                 </Col>
-            </Row>
-          </Col>
-          <Col xs={0} md={2}></Col>
-        </Row>
+
+                <Col xs={12} sm={6} md={6}>
+                  <Card className="w-100 rounded-0 shadow-sm">
+                    <Row className="g-0">
+                      {/* Text Column */}
+                      <Col xs={12}>
+                        <Card.Body className="d-flex flex-column justify-content-between w-100 gap-2">
+                          <h2
+                            className="text-center mb-3 fw-bold"
+                            style={{
+                              fontFamily: "Red Rose",
+                              fontSize: "30px",
+                            }}
+                          >
+                            Mini Reports
+                          </h2>
+                          <Card className="w-100 rounded-0">
+                            <Card.Body className="ps-0">
+                              <ul className="mb-0 custom-dots fs-5">
+                                <li>
+                                  The Future of Robotics in Hospitality & Events
+                                </li>
+                              </ul>
+                            </Card.Body>
+                          </Card>
+                          <Card className="w-100 rounded-0">
+                            <Card.Body className="ps-0">
+                              <ul className="mb-0 custom-dots fs-5">
+                                <li>
+                                  AI Vision Systems: Market Shifts in 2025
+                                </li>
+                              </ul>
+                            </Card.Body>
+                          </Card>
+                          <Card className="w-100 rounded-0">
+                            <Card.Body className="ps-0">
+                              <ul className="mb-0 custom-dots fs-5">
+                                <li>
+                                  Warehouse Automation: Challenges &
+                                  Opportunities
+                                </li>
+                              </ul>
+                            </Card.Body>
+                          </Card>
+                          <Card className="w-100 rounded-0">
+                            <Card.Body className="ps-0">
+                              <ul className="mb-0 custom-dots fs-5">
+                                <li>How Robotics is Changing Urban Services</li>
+                              </ul>
+                            </Card.Body>
+                          </Card>
+                        </Card.Body>
+                      </Col>
+                    </Row>
+                  </Card>
+                </Col>
+              </Row>
+            </Col>
+            <Col xs={0} md={1}></Col>
+          </Row>
+        </Container>
       </Row>
     </div>
   );
