@@ -38,7 +38,7 @@ const Blog = () => {
 
   return (
     <>
-      <div className="text-center mb-5 mt-5">
+      <div className="text-center mb-5 mt-4">
         <h2
           className="fw-bold"
           style={{
