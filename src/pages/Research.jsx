@@ -4,12 +4,29 @@ import { innovation, currentproject } from "../products/products";
 import image from "../assets/img1.jpg";
 import video from "../assets/myVideo.mp4";
 import CaseStudy from "../components/CaseStudy";
+import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Research = () => {
   const [products, setProducts] = useState([]);
   const [project, setProject] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [grapicsinfo, setGraghicinfo] = useState([
+    "SLAM (Simultaneous Localization and Mapping) Technology",
+    "LIDAR (Light Detection and Ranging) Systems",
+    "GPS (Global Positioning System) Navigation",
+    "Computer Vision Algorithms",
+    "Depth Sensing Cameras",
+    "Artificial Intelligence in Robotics",
+    "Drones with Autonomous Flight Capabilities",
+  ]);
+  const [miniproject, setMiniprojects] = useState([
+    "The Future of Robotics in Hospitality & Events",
+    "AI Vision Systems: Market Shifts in 2025",
+    "Warehouse Automation: Challenges & Opportunities",
+    "How Robotics is Changing Urban Services",
+  ]);
 
   useEffect(() => {
     // This simulates a network request. In a real app, you would fetch from an API.
@@ -921,64 +938,32 @@ const Research = () => {
                           >
                             Info Graphics Gallery
                           </h2>
-                          <Card className="w-100 rounded-0">
-                            <Card.Body className="ps-0">
-                              <ul className="mb-0 custom-dots fs-5">
-                                <li>
-                                  SLAM (Simultaneous Localization and Mapping)
-                                  Technology
-                                </li>
-                              </ul>
-                            </Card.Body>
-                          </Card>
-                          <Card className="w-100 rounded-0">
-                            <Card.Body className="ps-0">
-                              <ul className="mb-0 custom-dots fs-5">
-                                <li>
-                                  LIDAR (Light Detection and Ranging) Systems
-                                </li>
-                              </ul>
-                            </Card.Body>
-                          </Card>
-                          <Card className="w-100 rounded-0">
-                            <Card.Body className="ps-0">
-                              <ul className="mb-0 custom-dots fs-5">
-                                <li>
-                                  GPS (Global Positioning System) Navigation
-                                </li>
-                              </ul>
-                            </Card.Body>
-                          </Card>
-                          <Card className="w-100 rounded-0">
-                            <Card.Body className="ps-0">
-                              <ul className="mb-0 custom-dots fs-5">
-                                <li>Computer Vision Algorithms</li>
-                              </ul>
-                            </Card.Body>
-                          </Card>
-                          <Card className="w-100 rounded-0">
-                            <Card.Body className="ps-0">
-                              <ul className="mb-0 custom-dots fs-5">
-                                <li>Depth Sensing Cameras</li>
-                              </ul>
-                            </Card.Body>
-                          </Card>
-                          <Card className="w-100 rounded-0">
-                            <Card.Body className="ps-0">
-                              <ul className="mb-0 custom-dots fs-5">
-                                <li>TArtificial Intelligence in Robotics</li>
-                              </ul>
-                            </Card.Body>
-                          </Card>
-                          <Card className="w-100 rounded-0">
-                            <Card.Body className="ps-0">
-                              <ul className="mb-0 custom-dots fs-5">
-                                <li>
-                                  Drones with Autonomous Flight Capabilities
-                                </li>
-                              </ul>
-                            </Card.Body>
-                          </Card>
+                          {grapicsinfo.map((item, index) => (
+                            <Card className="w-100 rounded-0 mb-2" key={index}>
+                              <Card.Body className="ps-0">
+                                <ul className="mb-0 custom-dots fs-5">
+                                  <li>
+                                    <div className="d-flex justify-content-between align-items-center">
+                                      <span>{item}</span>
+                                      <span
+                                        className="d-flex justify-content-center align-items-center rounded-circle border border-dark"
+                                        style={{
+                                          width: "36px",
+                                          height: "36px",
+                                          backgroundColor: "transparent",
+                                        }}
+                                      >
+                                        <ArrowForwardIosIcon
+                                          fontSize="small"
+                                          className="text-dark"
+                                        />
+                                      </span>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </Card.Body>
+                            </Card>
+                          ))}
                         </Card.Body>
                       </Col>
                     </Row>
@@ -1000,41 +985,32 @@ const Research = () => {
                           >
                             Mini Reports
                           </h2>
-                          <Card className="w-100 rounded-0">
-                            <Card.Body className="ps-0">
-                              <ul className="mb-0 custom-dots fs-5">
-                                <li>
-                                  The Future of Robotics in Hospitality & Events
-                                </li>
-                              </ul>
-                            </Card.Body>
-                          </Card>
-                          <Card className="w-100 rounded-0">
-                            <Card.Body className="ps-0">
-                              <ul className="mb-0 custom-dots fs-5">
-                                <li>
-                                  AI Vision Systems: Market Shifts in 2025
-                                </li>
-                              </ul>
-                            </Card.Body>
-                          </Card>
-                          <Card className="w-100 rounded-0">
-                            <Card.Body className="ps-0">
-                              <ul className="mb-0 custom-dots fs-5">
-                                <li>
-                                  Warehouse Automation: Challenges &
-                                  Opportunities
-                                </li>
-                              </ul>
-                            </Card.Body>
-                          </Card>
-                          <Card className="w-100 rounded-0">
-                            <Card.Body className="ps-0">
-                              <ul className="mb-0 custom-dots fs-5">
-                                <li>How Robotics is Changing Urban Services</li>
-                              </ul>
-                            </Card.Body>
-                          </Card>
+                          {miniproject?.map((item, index) => (
+                            <Card className="w-100 rounded-0 mb-2" key={index}>
+                              <Card.Body className="ps-0">
+                                <ul className="mb-0 custom-dots fs-5">
+                                  <li>
+                                    <div className="d-flex justify-content-between align-items-center">
+                                      <span>{item}</span>
+                                      <span
+                                        className="d-flex justify-content-center align-items-center rounded-circle border border-dark"
+                                        style={{
+                                          width: "36px",
+                                          height: "36px",
+                                          backgroundColor: "transparent",
+                                        }}
+                                      >
+                                        <ArrowForwardIosIcon
+                                          fontSize="small"
+                                          className="text-dark"
+                                        />
+                                      </span>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </Card.Body>
+                            </Card>
+                          ))}
                         </Card.Body>
                       </Col>
                     </Row>

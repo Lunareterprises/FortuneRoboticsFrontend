@@ -217,12 +217,6 @@ const Home = () => {
             <Button
               variant="outline-light"
               className="btn-sm"
-              //   style={{
-              //     borderRadius: "0px",
-              //     padding: "0.75rem 1.5rem",
-              //     fontWeight: 500,
-              //     border: "1px solid white",
-              //   }}
               style={{
                 borderRadius: "0px",
                 height: "40px",

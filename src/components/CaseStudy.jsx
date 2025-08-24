@@ -91,7 +91,7 @@ const CaseStudy = () => {
 
           .hero-image {
             position: absolute;
-            top: -19px;
+            top: -1px;
             right: 180px;
             height: 120%; /* overflow top */
             object-fit: cover;
