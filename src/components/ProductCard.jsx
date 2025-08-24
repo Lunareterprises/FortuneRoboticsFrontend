@@ -89,7 +89,7 @@ const ProductCard = ({ product, buttonText }) => {
                 }}
                 onClick={() =>
                   buttonText.value === 1
-                    ? navigate("/research")
+                    ? navigate("/Product-Details")
                     : navigate("/blog")
                 }
               >

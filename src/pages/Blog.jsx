@@ -135,7 +135,7 @@ const Blog = () => {
                           </Container>
                         </div>
                         <div
-                          className=""
+                          className="mb-3"
                           style={{
                             fontFamily: "Red Rose",
                           }}
