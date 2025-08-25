@@ -253,7 +253,7 @@ const ProductDetails = () => {
               title="Technical Specifications"
               tabClassName="text-muted"
             >
-              <Col md={6}>
+              <Col md={6} className="p-0">
                 <Table responsive="sm" className="table-spaced">
                   <thead>
                     <tr style={{ fontSize: "14px" }}>
@@ -292,15 +292,29 @@ const ProductDetails = () => {
                     </tr>
                   </tbody>
                 </Table>
+
                 <style>{`
+    /* Remove spacing for the whole table */
     .table-spaced {
       border-collapse: separate !important;
-      border-spacing: 0 25px;
-      margin-top: 0 !important;
+      border-spacing: 0; /* no spacing by default */
+      margin: 0 !important;
+      width: 100%;
     }
-        .table-spaced tbody td {
-    vertical-align: middle;
-  }
+
+    /* Add spacing inside all tbody rows */
+    .table-spaced tbody td {
+      vertical-align: middle;
+      padding-top: 25.5px;   /* half of 75px */
+      padding-bottom: 25.5px;
+    }
+
+    /* Optional: adjust spacing for thead if needed */
+    .table-spaced thead th {
+      vertical-align: middle;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
   `}</style>
               </Col>
             </Tab>
