@@ -62,9 +62,14 @@ const Blog = () => {
         </p>
       </div>
       <Container className="my-2 d-flex justify-content-center align-items-center mb-5">
-        <div className="border border-secoundary p-2 d-inline-block rounded-1">
+        <div
+          className="border border-secondary p-2 d-inline-block rounded-1"
+          style={{
+            width: isMobile ? "95%" : isTablet ? "85%" : "auto", // responsive width
+          }}
+        >
           <div
-            className="btn-group gx-1 gx-sm-2 gx-md-3 overflow-auto"
+            className="btn-group d-flex flex-nowrap overflow-auto"
             role="group"
             style={{ fontFamily: "Red Rose" }}
           >
@@ -78,7 +83,8 @@ const Blog = () => {
                     : "rounded-0 text-black"
                 }`}
                 style={{
-                  fontSize: getFontSize(),
+                  fontSize: getFontSize(), // responsive font size
+                  whiteSpace: "nowrap", // prevent text wrapping
                 }}
               >
                 {btn}

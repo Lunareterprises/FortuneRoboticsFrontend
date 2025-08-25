@@ -1,4 +1,5 @@
 import {
+  Badge,
   Button,
   Card,
   Col,
@@ -9,62 +10,103 @@ import {
   Tabs,
 } from "react-bootstrap";
 import image from "../assets/img1.jpg";
+import { useRef } from "react";
 
 const ProductDetails = () => {
+  const scrollRef = useRef(null);
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+  let velocity = 0;
+  let momentumID;
+
+  const stopMomentum = () => {
+    cancelAnimationFrame(momentumID);
+  };
+
+  const handleDragStart = (x) => {
+    isDown = true;
+    stopMomentum();
+    startX = x - scrollRef.current.offsetLeft;
+    scrollLeft = scrollRef.current.scrollLeft;
+  };
+
+  const handleDragMove = (x) => {
+    if (!isDown) return;
+    const walk = (x - startX) * 2; // scroll-fast
+    const prevScroll = scrollRef.current.scrollLeft;
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+    velocity = scrollRef.current.scrollLeft - prevScroll;
+  };
+
+  const handleDragEnd = () => {
+    isDown = false;
+    momentum();
+  };
+
+  // Momentum scrolling
+  const momentum = () => {
+    if (Math.abs(velocity) > 0.5) {
+      scrollRef.current.scrollLeft += velocity;
+      velocity *= 0.95; // friction
+      momentumID = requestAnimationFrame(momentum);
+    }
+  };
+
   return (
     <>
       <Container className="p-5">
         <Row>
-          <Col xs={12} sm={4} md={2} className="d-flex flex-column gap-2">
+          {/* Left column for larger screens */}
+          <Col
+            xs={12}
+            sm={4}
+            md={2}
+            className="d-none d-sm-flex flex-column gap-2"
+          >
             {[...Array(4)].map((_, idx) => (
               <Card
                 key={idx}
                 className="rounded-0 shadow-sm w-100"
-                style={{ aspectRatio: "6 / 4" }} // controls height relative to width
+                style={{ aspectRatio: "6 / 4" }}
               >
                 <Card.Img
                   src={image}
                   className="w-100 h-100 rounded-0"
-                  style={{
-                    objectFit: "cover",
-                  }}
+                  style={{ objectFit: "cover" }}
                 />
               </Card>
             ))}
           </Col>
 
-          <Col xs={12} sm={6} md={9}>
+          {/* Main content */}
+          <Col xs={12} sm={8} md={9}>
             <Card className="w-100 rounded-0 h-100 d-flex border-0">
               <Row className="g-0 flex-grow-1">
+                {/* Left image inside main card */}
                 <Col
                   xs={12}
                   sm={4}
                   md={6}
                   className="d-flex"
-                  style={{ minHeight: "150px" }} // minimum height for small content
+                  style={{ minHeight: "150px" }}
                 >
                   <Card.Img
                     src={image}
                     className="w-100 rounded-0 border-0"
-                    style={{
-                      objectFit: "cover",
-                      height: "100%",
-                    }}
+                    style={{ objectFit: "cover", height: "100%" }}
                   />
                 </Col>
-                <Col xs={12} sm={6} md={6} className="d-flex gx-5">
+
+                {/* Main content details */}
+                <Col xs={12} sm={8} md={6} className="d-flex gx-5">
                   <Card.Body className="d-flex flex-column justify-content-between w-100">
-                    <div
-                      className="mb-3"
-                      style={{
-                        fontFamily: "Red Rose",
-                      }}
-                    >
+                    <div className="mb-3" style={{ fontFamily: "Red Rose" }}>
                       <Card.Title className="fs-1 fw-semibold mb-2">
                         Army Deliverer
                       </Card.Title>
                       <div className="d-flex justify-content-between align-items-start mb-2">
-                        {/* ⭐ Star Rating */}
                         <div className="text-warning small">
                           ★★★★☆ <span className="text-black">157 Reviews</span>
                         </div>
@@ -102,8 +144,8 @@ const ProductDetails = () => {
                       </ul>
                       <style jsx>{`
                         .custom-bullets li::marker {
-                          color: hsla(211, 100%, 50%, 1); /* bullet color */
-                          font-size: 1.3em; /* makes bullet bigger (thicker visually) */
+                          color: hsla(211, 100%, 50%, 1);
+                          font-size: 1.3em;
                         }
                       `}</style>
                     </div>
@@ -113,12 +155,10 @@ const ProductDetails = () => {
                         className="d-flex align-items-center justify-content-center rounded-0"
                         style={{
                           border: "1px solid hsla(211, 100%, 50%, 1)",
-                          borderRadius: "0px",
                           color: "hsla(211, 100%, 50%, 1)",
                           fontSize: "15px",
                           height: "45px",
-                          lineHeight: "1.5",
-                          backgroundColor: " #fff",
+                          backgroundColor: "#fff",
                         }}
                       >
                         DOWNLOAD BROCHURE
@@ -130,7 +170,6 @@ const ProductDetails = () => {
                           border: "1px solid hsla(211, 100%, 50%, 1)",
                           fontSize: "15px",
                           height: "45px",
-                          lineHeight: "1.5",
                           textAlign: "center",
                         }}
                       >
@@ -142,9 +181,27 @@ const ProductDetails = () => {
               </Row>
             </Card>
           </Col>
+
+          {/* Mobile images BELOW content, inside grid */}
+          <Col xs={12} className="d-flex d-sm-none gap-1 mt-2 overflow-auto">
+            {[...Array(4)].map((_, idx) => (
+              <Card
+                key={idx}
+                className="rounded-0 shadow-sm flex-shrink-0"
+                style={{ width: "120px", aspectRatio: "6 / 4" }}
+              >
+                <Card.Img
+                  src={image}
+                  className="w-100 h-100 rounded-0"
+                  style={{ objectFit: "cover" }}
+                />
+              </Card>
+            ))}
+          </Col>
         </Row>
       </Container>
-      <Container>
+
+      <Container className="mb-4">
         <Row className="p-1">
           <Tabs
             defaultActiveKey="Description"
@@ -321,6 +378,115 @@ const ProductDetails = () => {
           </Tabs>
         </Row>
       </Container>
+      <Container className="pt-4">
+        <Row>
+          <h3 className="fs-2 fw-bold">Related Robots</h3>
+        </Row>
+      </Container>
+      <Row className="p-4 px-5">
+        <div
+          ref={scrollRef}
+          className="d-flex gap-4 py-0"
+          style={{
+            width: "100%",
+            overflow: "hidden", // hide the scrollbar
+            cursor: isDown ? "grabbing" : "grab",
+          }}
+          onMouseDown={(e) => handleDragStart(e.pageX)}
+          onMouseMove={(e) => handleDragMove(e.pageX)}
+          onMouseUp={handleDragEnd}
+          onMouseLeave={() => isDown && handleDragEnd()}
+          // Touch events
+          onTouchStart={(e) => handleDragStart(e.touches[0].pageX)}
+          onTouchMove={(e) => handleDragMove(e.touches[0].pageX)}
+          onTouchEnd={handleDragEnd}
+        >
+          {[...Array(7)].map((_, index) => (
+            <Card
+              key={index}
+              className="h-100 custom-card flex-shrink-0"
+              style={{
+                borderRadius: "0px",
+                maxWidth: "300px",
+                boxShadow: "0 4px 5px rgba(0, 0, 0, 0.15)",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  paddingTop: "66.66%",
+                  overflow: "hidden",
+                }}
+              >
+                <Card.Img
+                  variant="top"
+                  src={image}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "0px",
+                    left: "1px",
+                  }}
+                >
+                  <Badge bg="primary" className="me-1 rounded-0">
+                    bages
+                  </Badge>
+                </div>
+              </div>
+
+              <Card.Body className="d-flex flex-column">
+                <Card.Title
+                  style={{ fontSize: "15px", fontWeight: "bold" }}
+                  className="mb-0"
+                >
+                  Produtc title
+                </Card.Title>
+                <Card.Text style={{ fontSize: "13px" }}>
+                  products text
+                </Card.Text>
+                <p
+                  className="text-bold mb-0"
+                  style={{ fontSize: "14px", fontWeight: "bold" }}
+                >
+                  Key Highlights :
+                </p>
+                <ul className="mb-2 flex-grow-1 custom-bullets">
+                  <li style={{ fontSize: "12px" }}>items 1</li>
+                  <li style={{ fontSize: "12px" }}>items 2</li>
+                  <li style={{ fontSize: "12px" }}>items 3</li>
+                  <li style={{ fontSize: "12px" }}>items 4</li>
+                </ul>
+                <style jsx>{`
+                  .custom-bullets li::marker {
+                    color: hsla(211, 100%, 50%, 1);
+                    font-size: 1.5em;
+                  }
+                `}</style>
+
+                <div className="d-grid gap-2 mt-auto">
+                  <Button
+                    className="btn btn-primary rounded-0 fw-bold"
+                    style={{ fontFamily: "Red Rose" }}
+                  >
+                    4200 AED | Buy Now
+                  </Button>
+                </div>
+              </Card.Body>
+            </Card>
+          ))}
+        </div>
+      </Row>
     </>
   );
 };

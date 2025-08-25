@@ -23,10 +23,10 @@ const ModalComponets = ({ modalShow, setModalShow, modalcontent }) => {
             </span>
           </button>
 
-          <div className="row mt-4">
+          <div className="row mt-3">
             <div className="col-lg-8 d-flex justify-content-end mb-3">
               <div
-                className="position-relative mb-4"
+                className="position-relative mb-2"
                 style={{ width: "400px", height: "220px" }}
               >
                 <img
@@ -46,7 +46,7 @@ const ModalComponets = ({ modalShow, setModalShow, modalcontent }) => {
               </div>
             </div>
 
-            <div className="col-lg-2 d-flex flex-column justify-content-end mb-3">
+            <div className="col-lg-2 d-flex flex-column justify-content-end mb-1">
               <div className="mb-4">
                 <p className="mb-1 fw-bold small">Client</p>
                 <p className="mb-0 small red-rose">{modalcontent.client}</p>

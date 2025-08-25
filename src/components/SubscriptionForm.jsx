@@ -19,7 +19,7 @@ const SubscriptionForm = ({ image }) => {
       style={{
         height: "40vh",
         width: "100%",
-        background: "linear-gradient(to bottom, #1e2a3b, #152049)",
+        background: "linear-gradient(to bottom, #303944ff, #424951ff",
         overflow: "visible", // allow overflow outside this div
       }}
     >
@@ -84,77 +84,34 @@ const SubscriptionForm = ({ image }) => {
               </Button>
             </Form>
           </Col>
+          <img
+            src={image}
+            alt="Futuristic robot"
+            className="hero-image d-none d-md-block"
+          />
 
           {/* Right Side Image */}
-          <Col md={5} className="d-none d-md-block position-relative hero-col">
-            <img src={image} alt="Futuristic robot" className="hero-image" />
-          </Col>
         </Row>
 
         {/* Media Queries */}
         <style jsx>{`
-          /* Default Desktop */
-          .hero-col {
-            min-height: 302px;
+          .min-vh-60 {
+            min-height: 25vh; /* hero height */
           }
+          .hero-image-col {
+            min-height: 300px; /* column height for image */
+          }
+
           .hero-image {
             position: absolute;
-            object-fit: cover;
-            bottom: 0;
-            height: 140%;
-            right: 100px;
-            z-index: 0;
-          }
-
-          /* iPad Pro Landscape (1200px - 1366px) */
-          @media (max-width: 1366px) and (min-width: 1200px) {
-            .hero-col {
-              min-height: 400px;
-              flex: 0 0 45%; /* shrink col width */
-              max-width: 45%;
-            }
-            .hero-image {
-              height: 160%;
-              right: 80px;
-            }
-          }
-
-          /* iPad Pro Portrait & Tablets (≤1199px) */
-          @media (max-width: 1199px) {
-            .hero-col {
-              min-height: 496px;
-              flex: 0 0 40%; /* smaller col */
-              max-width: 40%;
-            }
-            .hero-image {
-              height: 120%;
-              right: 10px;
-            }
-          }
-
-          @media (max-width: 912px) {
-            .hero-col {
-              min-height: 547px;
-              flex: 0 0 40%; /* smaller col */
-              max-width: 40%;
-            }
-            .hero-image {
-              height: 120%;
-              right: -40px;
-            }
-          }
-
-          /* Mobile screens (≤575px) */
-          @media (max-width: 575px) {
-            .hero-col {
-              min-height: 250px;
-              flex: 0 0 100%; /* full width col */
-              max-width: 100%;
-            }
-            .hero-image {
-              height: 90%;
-              right: 20px;
-            }
+            bottom: 0; /* stick to bottom */
+            left: 76%;
+            transform: translateX(-50%);
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 120%;
+            object-fit: contain;
           }
         `}</style>
       </Container>

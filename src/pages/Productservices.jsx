@@ -131,7 +131,7 @@ const Productservices = () => {
                     buttonText={{
                       name:
                         activeButton === "products"
-                          ? product.price
+                          ? `${product.price} | Buy N`
                           : "Request Quotes",
                       value: activeButton === "products" ? 1 : 0,
                     }}
@@ -193,16 +193,10 @@ const Productservices = () => {
         )}
       </Container>
 
-      <div
-        className="text-white d-flex align-items-center mt-3 position-relative hero-section"
-        style={{
-          width: "100%",
-          background: "linear-gradient(to bottom, #1e2a3b, #152049)",
-          overflow: "visible", // allow overflow outside this div
-        }}
-      >
-        <CaseStudy/>
-      </div>
+      <Row className="mb-4">
+
+          <CaseStudy />
+      </Row>
     </div>
   );
 };
