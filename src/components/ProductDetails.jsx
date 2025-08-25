@@ -1,4 +1,13 @@
-import { Button, Card, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Col,
+  Container,
+  Row,
+  Tab,
+  Table,
+  Tabs,
+} from "react-bootstrap";
 import image from "../assets/img1.jpg";
 
 const ProductDetails = () => {
@@ -136,22 +145,164 @@ const ProductDetails = () => {
         </Row>
       </Container>
       <Container>
-        <Row>
+        <Row className="p-1">
           <Tabs
-            defaultActiveKey="home"
+            defaultActiveKey="Description"
             transition={false}
             id="noanim-tab-example"
-            className="mb-3 gap-5"
+            className="mb-3 gap-5  flex-wrap"
             variant="underline"
           >
-            <Tab eventKey="home" title="Home" tabClassName="text-muted">
-              Tab content for Home
+            <Tab
+              eventKey="Description"
+              title="Description"
+              tabClassName="text-muted"
+              className="p-0"
+            >
+              <p className="text-black fs-6 m-0">
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text. It has roots in a piece of classical Latin literature from
+                45 BC, making it over 2000 years old. Richard McClintock, a
+                Latin professor at Hampden-Sydney College in Virginia, looked up
+                one of the more obscure Latin words, consectetur, from a Lorem
+                Ipsum passage, and going through the cites of the word in
+                classical literature, discovered the undoubtable source. Lorem
+                Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus
+                Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
+                written in 45 BC. This book is a treatise on the theory of
+                ethics, very popular during the Renaissance. The first line of
+                Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
+                in section 1.10.32. <br /> The standard chunk of Lorem Ipsum
+                used since the 1500s is reproduced below for those interested.
+                Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
+                Malorum" by Cicero are also reproduced in their exact original
+                form, accompanied by English versions from the 1914 translation
+                by H. Rackham.
+              </p>
             </Tab>
-            <Tab eventKey="profile" title="Profile" tabClassName="text-muted">
-              Tab content for Profile
+            <Tab eventKey="Reviews" title="Reviews" tabClassName="text-muted">
+              <Col sm={12} md={12} lg={6}>
+                <Card
+                  className="px-1 py-1 border-0 mb-3"
+                  style={{ width: "90%" }}
+                >
+                  <div className="d-flex align-items-start">
+                    <Card.Img
+                      src={image}
+                      className="rounded-circle me-3"
+                      style={{
+                        width: "50px", // 👈 small size
+                        height: "50px",
+                        objectFit: "cover",
+                      }}
+                    />
+                    <Card.Body className="p-0">
+                      <div className="d-flex justify-content-between align-items-center mb-2">
+                        <div className="text-warning ">★★★★☆</div>
+                      </div>
+                      <Card.Text style={{ fontSize: "16px" }}>
+                        You made it so simple. My new site is so much faster and
+                        easier to work with than my old site. I just choose the
+                        page, make the changes.
+                      </Card.Text>
+                      <h3 className="fs-6">Kristin Watson</h3>
+                      <h6 className="text-muted" style={{ fontSize: "13px" }}>
+                        March 14 2021
+                      </h6>
+                    </Card.Body>
+                  </div>
+                </Card>
+                <hr class="border border-1 border-gray-500" />
+              </Col>
+              <Col sm={12} md={12} lg={6}>
+                <Card
+                  className="px-1 py-1 border-0 mb-3"
+                  style={{ width: "90%" }}
+                >
+                  <div className="d-flex align-items-start">
+                    <Card.Img
+                      src={image}
+                      className="rounded-circle me-3"
+                      style={{
+                        width: "50px", // 👈 small size
+                        height: "50px",
+                        objectFit: "cover",
+                      }}
+                    />
+                    <Card.Body className="p-0">
+                      <div className="d-flex justify-content-between align-items-center mb-2">
+                        <div className="text-warning ">★★★★☆</div>
+                      </div>
+                      <Card.Text style={{ fontSize: "16px" }}>
+                        You made it so simple. My new site is so much faster and
+                        easier to work with than my old site. I just choose the
+                        page, make the changes.
+                      </Card.Text>
+                      <h3 className="fs-6">Jenny Wilson</h3>
+                      <h6 className="text-muted" style={{ fontSize: "13px" }}>
+                        January 28 2021
+                      </h6>
+                    </Card.Body>
+                  </div>
+                </Card>
+                <hr class="border border-1 border-gray-500" />
+              </Col>
             </Tab>
-            <Tab eventKey="contact" title="Contact" tabClassName="text-muted">
-              Tab content for Contact
+            <Tab
+              eventKey="Technical Specifications"
+              title="Technical Specifications"
+              tabClassName="text-muted"
+            >
+              <Col md={6}>
+                <Table responsive="sm" className="table-spaced">
+                  <thead>
+                    <tr style={{ fontSize: "14px" }}>
+                      <th style={{ paddingRight: "100px" }}>Specifications</th>
+                      <th>Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Dimensions</td>
+                      <td>1.2m x 0.5 x 0.5m</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Speed</td>
+                      <td>1.5 m/s</td>
+                    </tr>
+                    <tr>
+                      <td>Battery Life</td>
+                      <td>Upto 12 Hour</td>
+                    </tr>
+                    <tr>
+                      <td>Charging Time</td>
+                      <td>2.5 Hour</td>
+                    </tr>
+                    <tr>
+                      <td>Sensor</td>
+                      <td>LIDAR,3D Camara, Ultrasonic Sensors</td>
+                    </tr>
+                    <tr>
+                      <td>Connectivity</td>
+                      <td>Wi-Fi,Bluetooth,4G LTE</td>
+                    </tr>
+                    <tr>
+                      <td>Material</td>
+                      <td>Aerospace-grade aluminum + ABS Polymer</td>
+                    </tr>
+                  </tbody>
+                </Table>
+                <style>{`
+    .table-spaced {
+      border-collapse: separate !important;
+      border-spacing: 0 25px;
+      margin-top: 0 !important;
+    }
+        .table-spaced tbody td {
+    vertical-align: middle;
+  }
+  `}</style>
+              </Col>
             </Tab>
           </Tabs>
         </Row>
